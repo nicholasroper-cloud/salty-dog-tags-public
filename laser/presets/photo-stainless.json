@@ -1,0 +1,21 @@
+{
+  "name": "photo-stainless",
+  "label": "Photo on stainless (dithered image)",
+  "layerType": "image",
+  "status": "untested",
+  "source": "seed: stainless preset power/speed/frequency/pulse; image fields (ditherMode, interval, dpi, negative, angle) confirmed against a LightBurn 2.1.04 re-save. NOT burned yet: run a scrap-blank photo test first",
+  "updatedAt": "2026-10-16",
+  "cutSetting": {
+    "maxPower": 32,
+    "maxPower2": 20,
+    "speed": 150,
+    "frequency": 900000,
+    "QPulseWidth": 6,
+    "numPasses": 2,
+    "interval": 0.025,
+    "dpi": 1016,
+    "ditherMode": "stucki",
+    "negative": 0,
+    "angle": 0
+  }
+}

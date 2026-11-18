@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salty Dog Tags - Laser queue</title>
+<style>
+  :root { --bg:#10161c; --card:#18222b; --ink:#e8eef3; --dim:#8fa1b0; --rule:#2a3947; --ok:#3ecf8e; --warn:#f5b942; --bad:#ff6b6b; --accent:#4cc3ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  header { position:sticky; top:0; z-index:5; background:#0b1015; border-bottom:1px solid var(--rule); padding:.7rem 1rem; display:flex; flex-wrap:wrap; gap:.6rem 1.2rem; align-items:center; }
+  header h1 { font-size:1rem; margin:0; letter-spacing:.04em; }
+  .pill { display:inline-block; padding:.2rem .7rem; border-radius:999px; font-weight:600; font-size:.85rem; }
+  .pill.ok { background:#12382a; color:var(--ok); } .pill.warn { background:#3a2e10; color:var(--warn); } .pill.bad { background:#401c1c; color:var(--bad); }
+  .dim { color:var(--dim); font-size:.85rem; }
+  button { font:inherit; color:var(--ink); background:#22313d; border:1px solid var(--rule); border-radius:8px; padding:.35rem .8rem; cursor:pointer; }
+  button:hover { background:#2b3d4c; } button:disabled { opacity:.5; cursor:default; }
+  button.primary { background:#1d5f86; border-color:#2b86b8; } button.primary:hover { background:#237399; }
+  button.danger { background:#4a2323; border-color:#6b3030; }
+  main { max-width:1100px; margin:0 auto; padding:1rem; }
+  .banners div { background:#3a2e10; border:1px solid #6b5316; color:var(--warn); padding:.5rem .8rem; border-radius:8px; margin:.5rem 0; }
+  .banners div.red { background:#401c1c; border-color:#6b3030; color:var(--bad); }
+  .card { background:var(--card); border:1px solid var(--rule); border-radius:12px; margin:1rem 0; padding:1rem; }
+  .card.cancelled { border-color:var(--bad); }
+  .row { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; }
+  .row.between { justify-content:space-between; }
+  .oid { font:600 1.15rem ui-monospace, Menlo, monospace; }
+  .badge { font-size:.72rem; font-weight:700; padding:.12rem .5rem; border-radius:6px; letter-spacing:.05em; }
+  .badge.manual { background:var(--warn); color:#222; } .badge.error { background:var(--bad); color:#222; } .badge.demo { background:#556; } .badge.st { background:#22313d; color:var(--dim); }
+  .tag { border-top:1px solid var(--rule); margin-top:.8rem; padding-top:.8rem; }
+  .qty { font-size:1.6rem; font-weight:800; color:var(--accent); }
+  .files { display:flex; flex-wrap:wrap; gap:1rem; margin-top:.6rem; }
+  .file { background:#121b23; border:1px solid var(--rule); border-radius:10px; padding:.6rem; min-width:260px; flex:1 1 300px; }
+  .file.live { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok) inset; }
+  .file img { display:block; width:100%; max-height:130px; object-fit:contain; background:#fff; border-radius:6px; }
+  .live-tag { color:var(--ok); font-weight:700; font-size:.8rem; }
+  .warn { color:var(--warn); font-size:.85rem; margin:.25rem 0; }
+  .photo img { max-height:120px; border-radius:6px; background:#fff; }
+  .lines { font:.85rem ui-monospace, Menlo, monospace; color:var(--dim); margin:.35rem 0; white-space:pre-wrap; }
+  details summary { cursor:pointer; color:var(--dim); margin-top:1.5rem; }
+  #toasts { position:fixed; right:1rem; bottom:1rem; display:flex; flex-direction:column; gap:.4rem; z-index:9; }
+  .toast { background:#0b1015; border:1px solid var(--rule); border-left:4px solid var(--accent); padding:.5rem .8rem; border-radius:8px; max-width:420px; }
+  .toast.bad { border-left-color:var(--bad); } .toast.ok { border-left-color:var(--ok); }
+  .empty { color:var(--dim); text-align:center; padding:2rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SALTY DOG TAGS / LASER QUEUE</h1>
+  <span id="lbPill" class="pill warn">checking LightBurn...</span>
+  <span id="pollInfo" class="dim"></span>
+  <span id="kvInfo" class="dim"></span>
+  <button id="pollNow">Poll now</button>
+</header>
+<main>
+  <div id="banners" class="banners"></div>
+  <div id="open"></div>
+  <details id="doneWrap"><summary id="doneSum">Done</summary><div id="done"></div></details>
+</main>
+<div id="toasts"></div>
+<script>
+'use strict';
+// All API data goes in through textContent / setAttribute only. Never innerHTML with data.
+const $ = (s) => document.querySelector(s);
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === false || v == null) continue;
+    if (k === 'class') el.className = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v);
+  }
+  for (const kid of kids.flat()) if (kid != null && kid !== false) el.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  return el;
+}
+
+async function post(path, body) {
+  const res = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-SDT-Laser': '1' }, body: JSON.stringify(body || {}) });
+  let data = {};
+  try { data = await res.json(); } catch { /* empty */ }
+  return { status: res.status, data };
+}
+
+function toast(msg, kind) {
+  const t = h('div', { class: 'toast ' + (kind || '') }, msg);
+  $('#toasts').append(t);
+  setTimeout(() => t.remove(), 6000);
+}
+
+let last = null;
+async function refresh() {
+  try {
+    const res = await fetch('/api/jobs', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    last = await res.json();
+    render(last);
+  } catch (e) {
+    $('#lbPill').className = 'pill bad';
+    $('#lbPill').textContent = 'Queue service not responding';
+  }
+}
+
+function relTime(iso) {
+  if (!iso) return 'never';
+  const s = Math.round((Date.now() - new Date(iso).getTime()) / 1000);
+  if (s < 60) return s + 's ago';
+  if (s < 3600) return Math.round(s / 60) + ' min ago';
+  return new Date(iso).toLocaleString();
+}
+
+function render(d) {
+  // LightBurn pill
+  const lb = d.lightburn || {};
+  const pill = $('#lbPill');
+  if (lb.disabled) { pill.className = 'pill bad'; pill.textContent = 'UDP reply port busy'; }
+  else if (!lb.up) { pill.className = 'pill bad'; pill.textContent = 'LightBurn not responding (closed, or a dialog is open)'; }
+  else if (lb.status === 'busy') { pill.className = 'pill warn'; pill.textContent = 'Laser busy / not connected'; }
+  else { pill.className = 'pill ok'; pill.textContent = 'LightBurn ready'; }
+  const lp = d.lastPoll;
+  $('#pollInfo').textContent = lp ? `Last poll ${relTime(lp.at)}: ${lp.ok ? lp.orderCount + ' orders' : 'FAILED (' + lp.error + ')'}` : 'No poll yet';
+  $('#kvInfo').textContent = d.kv ? d.kv.line : '';
+  // banners
+  const bn = $('#banners'); bn.replaceChildren(...(d.banners || []).map((b) => h('div', { class: /cancelled|rejected|busy/i.test(b) ? 'red' : '' }, b)));
+  // jobs
+  const open = d.jobs.filter((j) => j.status !== 'done');
+  const done = d.jobs.filter((j) => j.status === 'done');
+  const openEl = $('#open');
+  openEl.replaceChildren(...(open.length ? open.map((j) => card(j, d)) : [h('div', { class: 'empty' }, 'No open orders. New paid orders appear here after the next poll.')]));
+  $('#doneSum').textContent = `Done (last ${done.length})`;
+  $('#done').replaceChildren(...done.map((j) => card(j, d, true)));
+}
+
+function tagSummary(t) {
+  const bm = t.blankMm ? `${t.blankMm.w.toFixed(2)} x ${t.blankMm.h.toFixed(2)} mm` : 'size n/a';
+  const preset = t.preset ? `preset ${t.preset}${t.presetStatus === 'untested' ? ' (UNTESTED)' : ''}` : 'no preset';
+  return `Tag ${t.index + 1} · ${t.shape} · ${t.finish} · ${bm} · ${t.font} + ${t.icon || 'none'} · customer size ${t.sizeLabel || t.size} · ${preset}`;
+}
+
+// "photo 22.0 x 16.3 mm, 347 x 257 px, stucki, preset photo-stainless (UNTESTED)"
+function photoInfoLine(pi) {
+  return `photo ${pi.windowMm.w.toFixed(1)} x ${pi.windowMm.h.toFixed(1)} mm, ${pi.wPx} x ${pi.hPx} px, ${pi.dither}, preset ${pi.preset}${pi.presetStatus === 'untested' ? ' (UNTESTED)' : ''}`;
+}
+
+function card(j, d, isDone) {
+  const job = j.job;
+  const live = d.lastLoaded && d.lastLoaded.orderId === j.orderId ? d.lastLoaded.file : null;
+  const el = h('div', { class: 'card' + (j.remoteStatus === 'cancelled' ? ' cancelled' : '') });
+  const head = h('div', { class: 'row between' },
+    h('div', { class: 'row' },
+      h('span', { class: 'oid' }, j.orderId),
+      h('span', {}, j.customerName || ''),
+      h('span', { class: 'dim' }, j.orderAt ? new Date(j.orderAt).toLocaleString() : ''),
+      h('span', { class: 'badge st' }, j.status),
+      j.remoteStatus && j.remoteStatus !== 'paid' ? h('span', { class: 'badge st' }, 'remote: ' + j.remoteStatus) : null,
+      j.demo ? h('span', { class: 'badge demo' }, 'DEMO') : null,
+      (job && job.mode === 'manual') ? h('span', { class: 'badge manual' }, 'MANUAL') : null,
+      j.status === 'error' ? h('span', { class: 'badge error' }, 'ERROR: ' + (j.error || '')) : null),
+    h('div', { class: 'row' },
+      h('button', { onclick: () => post('/api/reveal', { orderId: j.orderId }) }, 'Reveal in Finder'),
+      isDone ? null : h('button', { class: 'primary', onclick: (e) => markEngraved(j, e.target) }, 'Mark engraved'),
+      h('button', { onclick: (e) => regenerate(j, e.target) }, 'Regenerate')));
+  el.append(head);
+  if (!job) { el.append(h('div', { class: 'warn' }, 'No job.json yet for this order.')); return el; }
+  if (job.hasPrints) el.append(h('div', { class: 'warn' }, 'Also has 3D prints: ' + job.printsSummary.join(', ')));
+  for (const t of job.tags) {
+    const tg = h('div', { class: 'tag' });
+    tg.append(h('div', { class: 'row' }, h('span', { class: 'qty' }, 'Qty ' + t.qty), h('span', {}, tagSummary(t))));
+    if (t.mode === 'manual') {
+      tg.append(h('div', { class: 'warn' }, 'MANUAL: ' + t.manualReason));
+      if (t.photo) tg.append(h('div', { class: 'photo' }, h('img', { src: `/files/${encodeURIComponent(j.orderId)}/${encodeURIComponent(t.photo)}`, alt: 'customer photo' })));
+      const ml = t.manualLines;
+      if (ml && (ml.front.length || ml.back.length)) {
+        tg.append(h('div', { class: 'lines' }, (ml.front.length ? 'FRONT: ' + ml.front.join(' / ') + '\n' : '') + (ml.back.length ? 'BACK: ' + ml.back.join(' / ') : '')));
+      }
+    }
+    for (const n of t.notes || []) tg.append(h('div', { class: 'dim' }, n));
+    const files = h('div', { class: 'files' });
+    for (const f of t.files) {
+      if (f.variant) continue;   // variants (photo halftone) are extra Load buttons on their side's card, not cards of their own
+      const variants = t.files.filter((v) => v.variant && v.side === f.side);
+      const liveVariant = variants.find((v) => live === v.lbrn2);
+      const isLive = live === f.lbrn2 || !!liveVariant;
+      const isPhotoFront = !!t.photoInfo && f.side === 'front';
+      const lineText = isPhotoFront ? photoInfoLine(t.photoInfo) : (f.lines.length ? f.lines.join(' / ') : '(icon only)') + `  [size ${f.fontSize}${f.fit ? '' : ', OVERFLOW'}]`;
+      const fe = h('div', { class: 'file' + (isLive ? ' live' : '') },
+        h('div', { class: 'row between' }, h('b', {}, f.side.toUpperCase()), isLive ? h('span', { class: 'live-tag' }, 'In LightBurn now' + (liveVariant ? ` (${liveVariant.variant})` : '')) : null),
+        h('img', { src: `/files/${encodeURIComponent(j.orderId)}/${encodeURIComponent(f.svg)}`, alt: f.side + ' preview' }),
+        h('div', { class: 'lines' }, lineText),
+        ...f.warnings.map((w) => h('div', { class: 'warn' }, w.text)),
+        h('div', { class: 'row' },
+          h('button', { class: 'primary', onclick: (e) => loadFile(j.orderId, f, e.target) }, 'Load in LightBurn'),
+          ...variants.map((v) => h('button', { onclick: (e) => loadFile(j.orderId, v, e.target) }, `Load ${v.side} (${v.variant})`)),
+          h('button', { onclick: () => post('/api/reveal', { orderId: j.orderId, file: f.lbrn2 }) }, 'Reveal')));
+      files.append(fe);
+    }
+    tg.append(files);
+    el.append(tg);
+  }
+  return el;
+}
+
+const REASONS = {
+  LB_DOWN: 'LightBurn not responding (closed, or a dialog is open)',
+  LB_REFUSED: 'LightBurn refused the file (!)',
+  LB_TIMEOUT: 'LightBurn did not answer in time',
+  LB_INVALID: 'LightBurn did not understand the command (bug, see the log)',
+  BAD_PATH: 'That file is not in the queue folder',
+};
+
+async function loadFile(orderId, f, btn) {
+  btn.disabled = true;
+  try {
+    let r = await post('/api/load', { orderId, file: f.lbrn2 });
+    if (r.status === 409 && r.data.code === 'LASER_BUSY') {
+      if (!confirm('LightBurn reports the laser busy or not connected. Load anyway?')) return;
+      r = await post('/api/load', { orderId, file: f.lbrn2, force: true });
+    }
+    if (r.data.ok) { toast(`Loaded ${orderId} ${f.lbrn2.replace(orderId + '-', '').replace('.lbrn2', '').replace('-', ' ')}`, 'ok'); if (r.data.warning) toast(r.data.warning); }
+    else if (r.data.code === 'RATE_LIMITED') toast(`Wait ${Math.ceil((r.data.retryAfterMs || 1000) / 1000)} s between loads`, 'bad');
+    else toast(REASONS[r.data.code] || r.data.error || ('Load failed: ' + r.data.code), 'bad');
+  } finally { btn.disabled = false; refresh(); }
+}
+
+async function markEngraved(j, btn) {
+  btn.disabled = true;
+  try {
+    let r = await post('/api/engraved', { orderId: j.orderId });
+    if (r.status === 409 && r.data.code === 'HAS_PRINTS') {
+      if (!confirm(`${j.orderId} also has 3D prints that may not be finished:\n\n${(r.data.prints || []).join('\n')}\n\nMark the whole order made anyway?`)) return;
+      r = await post('/api/engraved', { orderId: j.orderId, confirmPrints: true });
+    }
+    if (r.data.ok) {
+      toast(`${j.orderId} marked engraved`, 'ok');
+      if (r.data.autoLoaded) toast(r.data.autoLoaded.ok ? `Loaded next: ${r.data.autoLoaded.orderId}` : `Next job not auto-loaded (${r.data.autoLoaded.code})`);
+    } else toast('Could not mark engraved: ' + (r.data.error || r.data.code), 'bad');
+  } finally { btn.disabled = false; refresh(); }
+}
+
+async function regenerate(j, btn) {
+  btn.disabled = true;
+  try {
+    const r = await post('/api/regenerate', { orderId: j.orderId });
+    if (r.data.ok) { toast(`${j.orderId} regenerated (${r.data.mode}); old files are in old/`, 'ok'); (r.data.warnings || []).forEach((w) => toast(w)); }
+    else toast('Regenerate failed: ' + (r.data.error || r.data.code), 'bad');
+  } finally { btn.disabled = false; refresh(); }
+}
+
+$('#pollNow').addEventListener('click', async (e) => {
+  e.target.disabled = true;
+  try { const r = await post('/api/poll', { auto: true }); toast(r.data.ok ? `Polled: ${r.data.picked.length} new` : 'Poll failed: ' + (r.data.error || ''), r.data.ok ? 'ok' : 'bad'); }
+  finally { e.target.disabled = false; refresh(); }
+});
+
+refresh();
+setInterval(refresh, 5000);
+</script>
+</body>
+</html>

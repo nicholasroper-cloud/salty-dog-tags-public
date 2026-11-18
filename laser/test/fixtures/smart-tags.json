@@ -1,0 +1,7 @@
+[
+  { "id": "s01", "note": "military 50 x 25, stainless, dark polarity, V3-Q", "tag": { "shape": "military", "size": "large", "finish": "stainless", "font": "block", "icon": "none", "color": "none", "photo": false, "front": ["BRUNO"], "back": ["BRUNO", "801-336-2244"], "qty": 1 } },
+  { "id": "s02", "note": "round 38 (brass blank), gate ignored for the geometry golden", "tag": { "shape": "round", "size": "medium", "finish": "brass", "font": "bungee", "icon": "none", "color": "none", "photo": false, "front": ["MAX"], "back": ["MAX", "435-555-0188"], "qty": 1 } },
+  { "id": "s03", "note": "polished bone 48 x 32 with the paw cut-out", "tag": { "shape": "bone", "size": "large", "finish": "polished", "font": "slab", "icon": "none", "color": "none", "photo": false, "front": ["WHISKY"], "back": ["WHISKY", "435-555-0123"], "qty": 1 } },
+  { "id": "s04", "note": "bone 38, two-line phone, inverse (black anodized)", "tag": { "shape": "bone", "size": "medium", "finish": "black", "font": "block", "icon": "none", "color": "none", "photo": false, "front": ["REX"], "back": ["REX", "435-555-0142"], "qty": 1 } },
+  { "id": "s05", "note": "heart 38, two-line phone, QR in the point", "tag": { "shape": "heart", "size": "medium", "finish": "stainless", "font": "block", "icon": "none", "color": "none", "photo": false, "front": ["LULU"], "back": ["LULU", "435-555-0199"], "qty": 1 } }
+]

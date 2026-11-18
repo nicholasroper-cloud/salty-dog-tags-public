@@ -1,0 +1,34 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+# /assets/* also covers /assets/og/* (the 1200x630 share images). Do not add a second Cache-Control rule for a nested path:
+# Cloudflare joins duplicate headers from every matching rule, which would send two conflicting Cache-Control values.
+/assets/*
+  Cache-Control: public, max-age=604800
+# Pages serves /thanks.html at /thanks and /orders.html at /orders (it strips .html), so list both forms.
+/thanks
+  X-Robots-Tag: noindex
+/thanks.html
+  X-Robots-Tag: noindex
+/orders
+  X-Robots-Tag: noindex
+/orders.html
+  X-Robots-Tag: noindex
+https://salty-dog-tags.pages.dev/*
+  X-Robots-Tag: noindex
+https://:hash.salty-dog-tags.pages.dev/*
+  X-Robots-Tag: noindex
+/claim
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+/claim.html
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+/my
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+/my.html
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer

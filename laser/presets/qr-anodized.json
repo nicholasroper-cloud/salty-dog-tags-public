@@ -1,0 +1,16 @@
+{
+  "name": "qr-anodized",
+  "label": "QR code on anodized",
+  "status": "untested",
+  "source": "seed copied from the anodized preset (crosshatch on). Run the QR test matrix, tune in LightBurn, then `node cli.mjs preset import <file.lbrn2> qr-anodized --layer 2`",
+  "updatedAt": "2026-11-16",
+  "cutSetting": {
+    "maxPower": 70,
+    "maxPower2": 20,
+    "speed": 800,
+    "frequency": 50000,
+    "QPulseWidth": 250,
+    "interval": 0.02,
+    "crossHatch": 1
+  }
+}

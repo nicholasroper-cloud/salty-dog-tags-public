@@ -1,0 +1,15 @@
+{
+  "name": "anodized",
+  "label": "Anodized aluminium",
+  "status": "untested",
+  "source": "seed: Thirsty Beaches Dog Tag - Color.lbrn2 layer C01 (a colour mark on stainless, NOT anodized aluminium; least trustworthy seed, run a test grid first)",
+  "updatedAt": "2026-10-16",
+  "cutSetting": {
+    "maxPower": 70,
+    "maxPower2": 20,
+    "speed": 800,
+    "frequency": 50000,
+    "QPulseWidth": 250,
+    "interval": 0.02
+  }
+}

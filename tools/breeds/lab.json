@@ -1,0 +1,134 @@
+{
+  "slug": "lab",
+  "title": "Labrador Dog Tags for Sock-Eating Swimmers | Salty Dog Tags",
+  "description": "Funny engraved Labrador tags: sock-eating, pond-swimming, never-been-fed jokes on the front, name and number on the back. From $12 a tag, engraved in Utah.",
+  "crumb": "Lab tags",
+  "h1": "Lab Dog Tags",
+  "blurb": "Engraved tags for the breed that has never once been fed, according to the breed. If there's a pond within a mile, a lab has been in it, usually wearing whatever was on its collar.",
+  "hero": {
+    "alt": "Close-up of a laser-engraved dog tag: polished stainless bone with a paw cut-out, engraved WHISKY and a phone number",
+    "figcaption": "Whisky's actual tag. He's a bulldog, but the laser doesn't care what breed you are."
+  },
+  "cta": "Build my lab's tag",
+  "sections": {
+    "tough": {
+      "h2": "Built for a dog that lives in the water",
+      "html": "<p>A lab doesn&#x27;t go for a swim. A lab goes in. Pool, lake, canal, the bay, the cooler you left open. Then it rolls in the sand to dry off and goes back in. A printed tag doesn&#x27;t last a summer like that.</p>\n<p>Ours are laser engraved, so the words are cut into the metal. There&#x27;s no ink for chlorine, salt water or mud to wash off, because the lettering isn&#x27;t sitting on top.</p>\n<p class=\"lp-kicker\">Your lab will still smell like a pond. The tag will still be readable.</p>\n<p><a class=\"lp-go\" href=\"/#build\">Build a tag &rarr;</a></p>"
+    },
+    "more": {
+      "h2": "Made by a house with seven bulldogs",
+      "lead": "We're a family in Lehi, Utah with seven English bulldogs and one very busy laser. We wrote the <a href=\"/bulldog-dog-tags/\">bulldog tags</a> first, from experience. The lab jokes come from friends, neighbors and every lab that has ever stolen our dogs' toys at the park.",
+      "alt": {
+        "href": "/sayings/",
+        "text": "See every saying &rarr;"
+      }
+    }
+  },
+  "sayings": {
+    "h2": "8 lab sayings everyone with a lab already says out loud",
+    "lead": "Labs are the friendliest dogs on earth and also the worst roommates. They eat socks, lie about dinner and fetch anything as long as they get to keep it. The joke goes on the front; the name and number go on the back, which is the side that matters when your lab turns up three yards over with a stolen sandwich.",
+    "note": "Every line above fits the tag as written. Want your own? Type it in the builder and the preview shows what fits before you pay.",
+    "cards": [
+      {
+        "lines": [
+          "Starving.",
+          "(Was fed at 6.)"
+        ]
+      },
+      {
+        "lines": [
+          "If found, check",
+          "the nearest pond."
+        ]
+      },
+      {
+        "lines": [
+          "Will fetch.",
+          "Will not give back."
+        ]
+      },
+      {
+        "lines": [
+          "Ate a sock.",
+          "Vet has my number."
+        ]
+      },
+      {
+        "lines": [
+          "Wet. Happy.",
+          "Getting in your car."
+        ]
+      },
+      {
+        "lines": [
+          "Tail clears",
+          "coffee tables."
+        ]
+      },
+      {
+        "lines": [
+          "Sheds daily.",
+          "Hugs harder."
+        ]
+      },
+      {
+        "lines": [
+          "Not lost.",
+          "Following a sandwich."
+        ]
+      }
+    ]
+  },
+  "related": {
+    "breeds": [
+      "golden-retriever",
+      "doodle",
+      "boxer",
+      "bernese"
+    ],
+    "guides": [
+      {
+        "href": "/guides/dog-tag-size-guide-by-breed/",
+        "text": "Dog Tag Size Guide by Breed"
+      },
+      {
+        "href": "/guides/what-to-put-on-a-dog-tag/",
+        "text": "What to Put on a Dog Tag"
+      }
+    ]
+  },
+  "faq": {
+    "h2": "Lab tag FAQ",
+    "items": [
+      {
+        "shapeFit": true
+      },
+      {
+        "q": "Will pool water and salt water ruin an engraved lab tag?",
+        "a": "No. The words are laser engraved into the metal, not printed on it, so there's no ink for chlorine, salt or pond water to wash away. Swim season can run all year."
+      },
+      {
+        "q": "Can I put my lab's name and my phone number on the tag?",
+        "a": "Yes, that's the standard build. The funny saying goes on the front, and your dog's name plus your phone number are engraved on the back. A third back line is optional."
+      },
+      {
+        "q": "Do you have sayings written specifically for Labradors?",
+        "a": "Nine of them on this page, about the eating, the swimming, the shedding, the fetching and the tail that clears coffee tables. Every one fits the tag as written, and the full sayings list has hundreds more."
+      },
+      {
+        "q": "What happens if the engraving comes out wrong?",
+        "a": "Custom tags aren't returnable, but if we mis-engrave it, we remake it free. Send a photo and we re-cut it. Tags are engraved and shipped from Lehi, Utah in 1 to 2 business days, then USPS takes 3 to 5 days in transit. US only."
+      }
+    ]
+  },
+  "product": {
+    "name": "Funny Engraved Lab Dog Tag",
+    "description": "Laser-engraved Labrador dog ID tag: a funny saying on the front, your dog's name and phone number on the back. Anodized aluminum, stainless steel or brass."
+  },
+  "breadcrumbName": "Lab Dog Tags",
+  "fit": {
+    "variant": "C",
+    "name": "Labrador"
+  },
+  "sayName": "lab"
+}

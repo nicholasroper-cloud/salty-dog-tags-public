@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salty Dog Tags — Orders</title>
+<meta name="description" content="Salty Dog Tags order admin.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/assets/logo/logo-final-icon.svg?v=50" type="image/svg+xml">
+<link rel="icon" href="/assets/logo/logo-final-icon-32.png?v=50" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/logo/logo-final-icon-180.png?v=50">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/styles.css?v=69">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/opentype.js/1.3.4/opentype.min.js"></script>
+<script src="/tag-layout.js?v=5"></script>
+<script src="/vendor/qrcodegen.js"></script>
+<script src="/tag-qr.js"></script>
+<script src="/orders-smart.js"></script>
+<style>
+  .top{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;margin:0 0 1.2rem}
+  .key{display:flex;gap:.5rem;align-items:center}
+  .key input{padding:.6rem .8rem;border:1.5px solid var(--rule);border-radius:10px;background:var(--salt);min-width:16rem}
+  .tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}
+  .order{background:var(--salt);border:1px solid var(--rule);border-radius:var(--r);padding:1rem 1.1rem;margin:0 0 .8rem}
+  .order__h{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between}
+  .order__h code{font-family:Bungee,monospace;font-size:1.2rem;color:var(--navy)}
+  .st{font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:.3rem .7rem;background:var(--sand-2)}
+  .st-new{background:var(--coral);color:#fff}.st-invoiced{background:var(--brass);color:#fff}.st-paid{background:var(--sea);color:#fff}.st-shipped,.st-done{background:var(--navy);color:var(--void)}
+  .lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.6rem;margin:.8rem 0}
+  .line{display:flex;gap:.7rem;align-items:center;background:var(--paper);border-radius:12px;padding:.5rem .6rem;font-size:.9rem}
+  .line svg{width:4.2rem;flex:none}
+  .ph-thumb{width:4.2rem;height:3.15rem;flex:none;border-radius:8px;object-fit:cover;background:var(--sand-2)}
+  .ph-wrap{display:flex;flex-direction:column;gap:.3rem;align-items:flex-start}
+  .ph-dl{font-family:"DM Mono",monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+  .meta{font-size:.9rem;color:var(--mute)}
+  .mach{display:inline-block;font-family:"DM Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .5rem;border-radius:999px;border:1px solid var(--line-2);margin-right:.4rem}
+  .mach--uv{color:var(--cyan);border-color:var(--cyan)}
+  .mach--fiber{color:var(--yellow);border-color:var(--yellow)}
+  .mach--qr{color:var(--magenta,#ff3cac);border-color:var(--magenta,#ff3cac)}
+  .warnflag{color:var(--yellow);font-weight:700}
+  .acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem;align-items:center}
+  .acts .btn{padding:.5rem .9rem;font-size:.66rem}
+  .acts select{padding:.45rem .7rem;border:1.5px solid var(--rule);border-radius:999px;background:var(--salt)}
+  .empty{color:var(--mute)}
+  /* ---- Ship it panel (tag photo + tracking + customer email) ---- */
+  .ship{margin:.9rem 0 0;padding:.9rem 0 0;border-top:1px dashed var(--line-2);display:grid;gap:.7rem}
+  .ship__h{margin:0;display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:baseline;font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+  .ship__h b{color:var(--cyan);font-weight:500}
+  .ship__row{display:flex;gap:.8rem;align-items:center}
+  .ship__ph{width:6.5rem;height:6.5rem;flex:none;border-radius:12px;object-fit:cover;background:var(--paper);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;text-align:center;font-size:.72rem;color:var(--dim);padding:.4rem;box-sizing:border-box}
+  .ship__ph--warn{border:1.5px dashed var(--yellow);color:var(--yellow)}
+  .ship__ctl{display:grid;gap:.4rem;min-width:0}
+  .ship .btn{min-height:46px;padding:0 1.1rem;font-size:.7rem}
+  .ship__file{position:relative;overflow:hidden;cursor:pointer}
+  .ship__file input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:0}
+  .ship__fld{display:grid;gap:.3rem;font-size:.82rem;color:var(--mute)}
+  .ship__fld input{font-size:16px;font-family:"DM Mono",monospace;letter-spacing:.04em;padding:.75rem .85rem;border:1.5px solid var(--line-2);border-radius:10px;background:var(--field);color:var(--text);width:100%;box-sizing:border-box}
+  .ship__fld input[aria-invalid="true"]{border-color:var(--magenta)}
+  .ship__err{color:var(--magenta-2);font-size:.82rem;min-height:0}
+  .ship__tog{display:flex;gap:.6rem;align-items:center;font-size:.9rem;min-height:44px}
+  .ship__tog input{width:1.35rem;height:1.35rem;accent-color:var(--magenta);flex:none}
+  .ship__tog--off{color:var(--dim)}
+  .ship__btns{display:flex;flex-wrap:wrap;gap:.5rem}
+  .ship__btns .btn--solid{flex:1 1 12rem}
+  .ship__info{margin:0;font-size:.88rem;line-height:1.5;color:var(--mute)}
+  .ship__info a{color:var(--cyan)}
+  .ship__ok{color:var(--lime)}.ship__bad{color:var(--magenta-2)}
+  .ship__setup{margin:0;font-size:.82rem;color:var(--yellow)}
+  .nav__tag{margin-left:.75rem;font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="nav__mark" href="/"><img src="/assets/logo/logo-final-horizontal-dark.svg?v=50" alt="Salty Dog Tags" width="172" height="44"><span class="nav__tag">Orders</span></a>
+<div class="nav__links"><a href="/">Site</a><a href="https://www.clover.com/dashboard" target="_blank" rel="noopener">Clover</a></div></nav>
+<main class="sec"><div class="wrap">
+  <div class="top">
+    <div><p class="eyebrow">Owner only</p><h2 style="margin:0">Orders</h2></div>
+    <form class="key" id="keyForm"><input type="password" id="key" placeholder="Admin key" autocomplete="current-password"><button class="btn btn--solid" type="submit" style="padding:.6rem 1rem;font-size:.68rem">Load</button></form>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="list"><p class="empty">Paste the admin key once. It stays in this browser.</p></div>
+  <section id="fbSec" style="margin-top:3rem" hidden><h2 style="margin:0 0 .8rem">Roast feedback</h2><div id="fbBox"></div></section>
+  <section id="wallSec" style="margin-top:3rem" hidden><h2 style="margin:0 0 .8rem">Wall of Shame</h2>
+    <form id="wallForm" class="field" style="display:grid;gap:.6rem;max-width:34rem">
+      <input id="wName" placeholder="Dog name" required maxlength="40"><input id="wBreed" placeholder="Breed" maxlength="40">
+      <input id="wL1" placeholder="Tag line 1" maxlength="30"><input id="wL2" placeholder="Tag line 2" maxlength="30">
+      <textarea id="wRoast" placeholder="Roast line" required maxlength="280" rows="2"></textarea><input id="wCity" placeholder="City" maxlength="60">
+      <input id="wImg" type="file" accept="image/*" required>
+      <label><input id="wConsent" type="checkbox"> Owner consented to post (emailed photo)</label>
+      <button class="btn btn--solid" type="submit" style="padding:.6rem 1rem;font-size:.68rem">Add to Wall</button>
+    </form>
+    <div id="wallList" style="margin-top:1rem"></div></section>
+</div></main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+  const $=(s)=>document.querySelector(s); const $$=(s)=>Array.from(document.querySelectorAll(s)); const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const money=(n)=>'$'+(Math.round(n*100)/100).toFixed(2);
+  const STATUSES=['new','invoiced','paid','made','shipped','done','cancelled'];
+  const SIZE={small:'Small 1"',medium:'Medium 1.5"',large:'Large 2"',xl:'XL 2.5"'};
+  let key=''; try{key=localStorage.getItem('sdt-admin')||'';}catch{}
+  let orders=[], tab='open';
+  $('#key').value=key;
+  function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('is-on');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('is-on'),2000);}
+  async function api(method,body){const r=await fetch('/api/orders',{method,headers:{'authorization':'Bearer '+key,'content-type':'application/json'},body:body?JSON.stringify(body):undefined});if(r.status===401)throw new Error('Wrong key.');return r.json();}
+  function tagSVGOld(t){const C={black:['#1E2124','#EDEFF2'],red:['#E23B3B','#EDEFF2'],royal:['#2F5FD8','#EDEFF2'],sky:['#5CB9EA','#26292E'],green:['#4FC27C','#EDEFF2'],yellow:['#F4C83F','#26292E'],silver:['#DADDE1','#26292E'],pink:['#F4BBD2','#26292E'],hotpink:['#EE5FA6','#EDEFF2'],stainless:['#C9CED4','#26292E'],brass:['#D2AB5C','#4A3610']};const c=C[t.finish]||C.black;
+    const lines=t.front.length?t.front:t.back; const n=lines.length||1; const fs=Math.max(10,Math.min(18,120/Math.max(...lines.map(l=>l.length),1)*1.4));
+    return `<svg viewBox="0 0 100 60"><rect x="4" y="4" width="92" height="52" rx="14" fill="${c[0]}"/><g font-family="Archivo,sans-serif" font-weight="700" fill="${c[1]}" text-anchor="middle" font-size="${fs}">${lines.map((l,i)=>`<text x="50" y="${30-((n-1)*fs*1.15)/2+i*fs*1.15+fs*.35}">${esc(l.toUpperCase())}</text>`).join('')}</g></svg>`;}
+  /* ---- Zartan's template art, same source as app.js (see app.js for the full write-up). Paw is
+     opt-in (shapes.json shapes.paw.ready === true exactly); bone/heart/round/military are opt-out
+     (ready !== false). Until a shape's template loads and passes its sanity check, tagSVGOld runs. ---- */
+  const FIN={black:{c:'#1E2124',ink:'light',kind:'anodized'},red:{c:'#E23B3B',ink:'light',kind:'anodized'},royal:{c:'#2F5FD8',ink:'light',kind:'anodized'},sky:{c:'#5CB9EA',ink:'dark',kind:'anodized'},green:{c:'#4FC27C',ink:'light',kind:'anodized'},yellow:{c:'#F4C83F',ink:'dark',kind:'anodized'},silver:{c:'#DADDE1',ink:'dark',kind:'anodized'},pink:{c:'#F4BBD2',ink:'dark',kind:'anodized'},hotpink:{c:'#EE5FA6',ink:'light',kind:'anodized'},stainless:{c:'#C9CED4',ink:'dark',kind:'stainless'},ssblack:{c:'#2B2E33',ink:'light',kind:'stainless'},navy:{c:'#1F3A6E',ink:'light',kind:'stainless'},gold:{c:'#D4AF4A',ink:'dark',kind:'stainless'},bronze:{c:'#B5885A',ink:'dark',kind:'stainless'},rainbow:{c:'#9C6BD6',ink:'dark',kind:'stainless'},polished:{c:'#E4E7EA',ink:'dark',kind:'stainless'},brass:{c:'#D2AB5C',ink:'dark',kind:'brass'}};
+  const TEMPLATE_SHAPES=['bone','heart','round','military','paw'];
+  const TEMPLATE_LAYER_IDS=['shadow','ring-back','edge','body','hole','bevel','ring-front'];
+  const TEMPLATES={};
+  const TPL_DEFS='<linearGradient id="sdt-en" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFCFE"/><stop offset=".55" stop-color="#C9CED6"/><stop offset="1" stop-color="#EDF0F4"/></linearGradient>';
+  function finishBaseColor(finish,f){return finish==='polished'?'#D9DDE2':finish==='gold'?'#D4AF4A':finish==='bronze'?'#9A6B3C':f.kind==='stainless'?'#BFC5CC':f.kind==='brass'?'#C9A24E':finish==='black'?'#1B1D21':finish==='ssblack'?'#17181C':(f.c||'#333');}
+  function luminanceOf(hex){const h=hex.replace('#','');const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);return(0.299*r+0.587*g+0.114*b)/255;}
+  function tplPrefixIds(svgText,shape){let out=svgText;for(const id of TEMPLATE_LAYER_IDS)out=out.split(`id="${id}"`).join(`id="${shape}-${id}"`);return out;}
+  function tplParse(svgText,shape){if(!svgText)return null;const vb=/viewBox="([^"]+)"/.exec(svgText);if(!vb||vb[1].trim()!=='0 0 320 240')return null;if(svgText.indexOf('id="body"')===-1||svgText.indexOf(`id="${shape}-clip"`)===-1)return null;const close=svgText.lastIndexOf('</svg>');if(close===-1)return null;return tplPrefixIds(svgText.slice(svgText.indexOf('>')+1,close),shape);}
+  function loadTemplates(){
+    Promise.all([
+      fetch('/assets/shapes/shapes.json?v=51').then(r=>r.json()),
+      ...TEMPLATE_SHAPES.map(s=>fetch(`/assets/shapes/${s}.svg?v=51`).then(r=>r.ok?r.text():null).catch(()=>null)),
+    ]).then(([geoDoc,...svgTexts])=>{
+      TEMPLATE_SHAPES.forEach((shape,i)=>{
+        const geo=(geoDoc.shapes||{})[shape]; const inner=tplParse(svgTexts[i],shape);
+        if(!geo||!inner)return;
+        const ready=shape==='paw'?geo.ready===true:geo.ready!==false;
+        TEMPLATES[shape]={inner,area:geo.area,ready};
+      });
+      if(orders.length)render();
+    }).catch(()=>{});
+  }
+  function tagSVGTemplate(t,tpl){
+    const fin=FIN[t.finish]||FIN.black; const base=finishBaseColor(t.finish,fin);
+    const lines=(t.front&&t.front.some(Boolean)?t.front:t.back).filter(Boolean).slice(0,4);
+    const area=tpl.area; const n=Math.max(1,lines.length); const maxLen=Math.max(1,...lines.map(l=>l.length));
+    let fs=Math.min(26,area.w/(maxLen*0.62),area.h/(n*1.2)); fs=Math.max(9,Math.floor(fs));
+    const lh=fs*1.18, top=area.cy-((n-1)*lh)/2+fs*0.36;
+    const textSvg=lines.map((l,i)=>`<text x="${area.cx}" y="${(top+i*lh).toFixed(1)}" text-anchor="middle" font-size="${fs}">${esc(l.toUpperCase())}</text>`).join('');
+    const lightInk=luminanceOf(base)<0.5;
+    const textMarkup=lightInk
+      ?`<g fill="rgba(0,0,0,.55)" transform="translate(0,-1)">${textSvg}</g><g fill="rgba(255,255,255,.35)" transform="translate(0,1)">${textSvg}</g><g fill="url(#sdt-en)">${textSvg}</g>`
+      :`<g fill="rgba(255,255,255,.5)" transform="translate(0,0.9)">${textSvg}</g><g fill="#1F2327">${textSvg}</g>`;
+    return `<svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="color:${base}"><defs>${TPL_DEFS}</defs>${tpl.inner}<g font-family="Archivo,sans-serif" font-weight="700">${textMarkup}</g></svg>`;
+  }
+  function tagSVG(t){const tpl=TEMPLATES[t.shape];if(tpl&&tpl.ready)return tagSVGTemplate(t,tpl);return tagSVGOld(t);}
+  loadTemplates();
+  function cloverText(o){const items=[...(o.ornaments||[]).map(x=>`${x.qty}x holiday ornament, ${x.tier==='stainless'?'engraved stainless bone':'printed acrylic'} — ${x.name} ${x.year}${x.raised&&x.tier==='acrylic'?' (raised)':''} — art: ${x.art}${x.style?' ('+x.style+')':''}`),...o.tags.map(t=>`${t.qty}x ${t.shape} tag, ${SIZE[t.size]||t.size}, ${t.finish==='fullcolor'?'FULL COLOR print'+(t.raised?' + raised lettering':'')+' ['+t.art+(t.style?' / '+t.style:'')+']':t.finish} — front: ${t.front.join(' / ')} — back: ${t.back.join(' / ')}`),...o.prints.map(p=>`${p.qty}x ${p.item}${p.note?' ('+p.note+')':''}${p.price?' @ $'+p.price:' (quote)'}`)];
+    return `Salty Dog Tags order ${o.id}\nCustomer: ${o.customer.name} <${o.customer.email}>${o.customer.phone?' '+o.customer.phone:''}\n${items.join('\n')}\n${o.customer.delivery==='pickup'?'Pickup at trailer':'Ship to: '+o.customer.address}\nSubtotal ${money(o.totals.subtotal)}${o.totals.discount?' | multi-tag discount -'+money(o.totals.discount):''} | shipping ${money(o.totals.shipping)} | TOTAL ${money(o.totals.total)} + tax${o.customer.note?'\nNote: '+o.customer.note:''}`;}
+  /* ---- Ship it: tag photo, tracking, "Your tag shipped" email (functions/api/ship.js) ---- */
+  let shipCfg={email:{configured:false}};
+  const trackDraft={}, shipBusy={};
+  async function loadShipCfg(){try{const r=await fetch('/api/ship',{headers:{authorization:'Bearer '+key}});if(r.ok)shipCfg=await r.json();}catch{}}
+  async function shipApi(body){const r=await fetch('/api/ship',{method:'POST',headers:{authorization:'Bearer '+key,'content-type':'application/json'},body:JSON.stringify(body)});let d={};try{d=await r.json();}catch{}if(r.status===401)throw new Error('Wrong key.');if(!r.ok){const e=new Error(d.error||('Failed ('+r.status+')'));e.field=d.field;e.data=d;throw e;}return d;}
+  // Same loose rules as functions/api/_email.js cleanTracking(). Keep them in step.
+  function cleanTracking(raw){const s=String(raw||'').toUpperCase().replace(/[\s-]+/g,'');if(!s)return{ok:true,number:''};let m;if((m=/^420\d{5}(\d{20,22})$/.exec(s))||(m=/^420\d{9}(\d{20,22})$/.exec(s)))return{ok:true,number:m[1]};if(/^\d{20,22}$/.test(s)||/^[A-Z]{2}\d{9}US$/.test(s)||/^\d{10}$/.test(s))return{ok:true,number:s};return{ok:false,error:"Doesn't look like USPS tracking (20 to 22 digits starting 9, or like EC123456789US)."};}
+  const uspsUrl=(n)=>'https://tools.usps.com/go/TrackConfirmAction?tLabels='+encodeURIComponent(n);
+  const when=(t)=>new Date(t).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+  const shipPhotoUrl=(o)=>o.shipPhoto&&o.shipPhoto.token?`/api/tag-photo/${encodeURIComponent(o.id)}/${o.shipPhoto.token}`:'';
+  function emailLine(o){const e=o.shipEmail;if(!e)return'';
+    if(e.ok)return`<span class="ship__ok">Emailed</span> ${esc(e.to||o.customer.email)} &middot; ${esc(when(e.at))}${e.sends>1?' &middot; sent '+e.sends+'&times;':''}`;
+    return`<span class="ship__bad">Email not sent:</span> ${esc(e.error||'unknown')}${e.at?' &middot; '+esc(when(e.at)):''}`;}
+  function shipPanel(o){
+    if(o.status==='cancelled')return'';
+    const pickup=o.customer.delivery==='pickup', shipped=Boolean(o.shipped&&o.shipped.at), ph=shipPhotoUrl(o), emailOn=Boolean(shipCfg.email&&shipCfg.email.configured), busy=shipBusy[o.id]||'';
+    const tr=o.shipped&&o.shipped.tracking||'';
+    const draft=trackDraft[o.id]!=null?trackDraft[o.id]:tr;
+    const head=shipped?`${pickup?'Ready':'Shipped'} <b>${esc(when(o.shipped.at))}</b>`:(pickup?'Ready for pickup':'Ship it');
+    const photoBox=busy==='photo'?`<div class="ship__ph">Uploading&hellip;</div>`:ph?`<a href="${esc(ph)}" target="_blank" rel="noopener"><img class="ship__ph" src="${esc(ph)}" alt="Photo of the finished tag for ${esc(o.id)}"></a>`:`<div class="ship__ph ship__ph--warn">No tag photo yet</div>`;
+    const trackInfo=shipped&&!pickup?(tr?`USPS <a href="${esc(uspsUrl(tr))}" target="_blank" rel="noopener">${esc(tr)}</a>`:'No tracking number'):'';
+    const el=emailLine(o);
+    return`<section class="ship" data-ship>
+      <p class="ship__h">${head}</p>
+      <div class="ship__row">${photoBox}<div class="ship__ctl">
+        <label class="btn btn--ghost ship__file">${ph?'Retake photo':'Add tag photo'}<input type="file" accept="image/*" data-shipfile aria-label="${ph?'Retake':'Add'} tag photo for ${esc(o.id)}"></label>
+        <span class="meta" style="font-size:.78rem">${ph?'This photo goes in the email.':'Snap the finished tag. It goes in the email.'}</span></div></div>
+      ${(trackInfo||el)?`<p class="ship__info">${trackInfo}${trackInfo&&el?'<br>':''}${el}</p>`:''}
+      ${pickup?'':`<label class="ship__fld">USPS tracking ${shipped?'':'(optional)'}<input data-track value="${esc(draft)}" inputmode="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="9400 1000 0000 0000 0000 00" enterkeyhint="done"></label><span class="ship__err" data-trackerr></span>`}
+      ${shipped?'':(emailOn
+        ?`<label class="ship__tog"><input type="checkbox" data-sendmail checked> Send &ldquo;${pickup?'ready':'shipped'}&rdquo; email to ${esc(o.customer.email)}</label>`
+        :`<label class="ship__tog ship__tog--off"><input type="checkbox" disabled> Send email to customer</label><p class="ship__setup">Email not set up yet (see README)</p>`)}
+      <div class="ship__btns">
+        ${shipped
+          ?`${pickup?'':`<button class="btn btn--ghost" data-ship-go ${busy?'disabled':''}>${busy==='ship'?'Saving&hellip;':'Save tracking'}</button>`}${emailOn?`<button class="btn btn--ghost" data-ship-resend ${busy?'disabled':''}>${busy==='resend'?'Sending&hellip;':(o.shipEmail&&o.shipEmail.ok?'Resend email':'Send email')}</button>`:''}`
+          :`<button class="btn btn--solid" data-ship-go ${busy?'disabled':''}>${busy==='ship'?'Saving&hellip;':(pickup?'Mark ready for pickup':'Mark shipped')}</button>`}
+      </div>
+      ${shipped&&!emailOn?'<p class="ship__setup">Email not set up yet (see README)</p>':''}
+    </section>`;}
+  /* Phone photo -> JPEG, long side <= 1600px, aiming ~300 KB (server caps 700 KB in KV). Browsers apply
+     EXIF rotation when drawing, so portrait shots stay portrait. */
+  async function shrinkPhoto(file,maxSide=1600,target=300*1024){
+    let src,w,h;
+    try{src=await createImageBitmap(file,{imageOrientation:'from-image'});w=src.width;h=src.height;}
+    catch{src=await new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error("Couldn't read that photo."));im.src=URL.createObjectURL(file);});w=src.naturalWidth;h=src.naturalHeight;}
+    const enc=(side,q)=>{const k=Math.min(1,side/Math.max(w,h));const c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);g.drawImage(src,0,0,c.width,c.height);return c.toDataURL('image/jpeg',q);};
+    const size=(u)=>Math.floor((u.length-u.indexOf(',')-1)*3/4);
+    let best=null;
+    for(const side of [maxSide,1280,1024]){for(const q of [.82,.74,.66,.58,.5]){const u=enc(side,q);best=u;if(size(u)<=target)return u;}}
+    if(size(best)>650*1024)throw new Error('Photo is still too big after shrinking.');
+    return best;}
+  // One uploaded image: thumbnail + download. An SVG is NOT decoded until someone clicks it (an upload can be expensive to render);
+  // a declined image is gone (deleted at decline time). `base` names the download, the extension comes from the stored type.
+  function thumbHtml(o,idx,mime,base,declined,alt){
+    if(declined)return `<span class="ph-wrap"><span class="meta"><b class="warnflag">Declined</b><br>image deleted</span></span>`;
+    const svg=/svg/.test(mime||''), ext=extOf(mime||'image/jpeg');
+    return `<span class="ph-wrap"><img class="ph-thumb" data-id="${esc(o.id)}" data-idx="${idx}" ${svg?'data-svg="1" ':''}alt="${esc(alt)}">${svg?`<button type="button" class="ph-dl" data-loadsvg data-id="${esc(o.id)}" data-idx="${idx}">Load SVG preview</button>`:''}<a class="ph-dl" data-id="${esc(o.id)}" data-idx="${idx}" data-base="${esc(base)}" href="#" download="${esc(base)}.${ext}">Download</a></span>`;
+  }
+  // Review line for an upload: path, type, rights record, retention, fingerprint, 18+ flag.
+  function reviewMeta(x){
+    if(!x.photo)return '';
+    const ack=x.ack&&x.ack.ownRights?' · rights acknowledged '+new Date(x.ack.at).toLocaleDateString()+(x.ack.v?' (wording '+esc(x.ack.v)+')':''):' · <span class="warnflag">NO rights acknowledgment on file</span>';
+    const keep=x.declined?'':(x.photoExpiresAt?' · image deleted after '+new Date(x.photoExpiresAt).toLocaleDateString():'');
+    const sha=x.photoSha256?` · sha256 ${esc(x.photoSha256.slice(0,12))}…`:'';
+    const dec=x.declined?` · <span class="warnflag">DECLINED ${new Date(x.declined.at).toLocaleDateString()}</span> (${x.declined.emailed?'customer emailed':'customer NOT emailed: '+esc(x.declined.emailError||'email off')})`:'';
+    return ack+keep+sha+(x.adult?' · <span class="warnflag">18+ wording: check anyone in the image</span>':'')+dec;
+  }
+  function render(){
+    const open=orders.filter(o=>!['done','cancelled'].includes(o.status)), closed=orders.filter(o=>['done','cancelled'].includes(o.status));
+    $('#tabs').innerHTML=`<button class="chip" data-t="open" aria-pressed="${tab==='open'}">Open (${open.length})</button><button class="chip" data-t="closed" aria-pressed="${tab==='closed'}">Done (${closed.length})</button><button class="chip" data-t="refresh">Refresh</button>`;
+    const list=tab==='open'?open:closed;
+    $('#list').innerHTML=list.length?list.map(o=>`<article class="order" data-id="${esc(o.id)}">
+      <div class="order__h"><code>${esc(o.id)}</code><span class="st st-${esc(o.status)}">${esc(o.status)}</span>${o.payment?`<span class="st st-paid">card ${esc(o.payment.status||'')}</span>`:''}<span class="meta">${new Date(o.at).toLocaleString()}</span><strong>${money(o.totals.total)} + tax</strong></div>
+      <p class="meta" style="margin:.5rem 0 0"><b>${esc(o.customer.name)}</b> &middot; <a href="mailto:${esc(o.customer.email)}">${esc(o.customer.email)}</a>${o.customer.phone?' &middot; '+esc(o.customer.phone):''}<br>${o.customer.delivery==='pickup'?'<b>Pickup at the trailer</b>':'Ship to: '+esc(o.customer.address)}${o.customer.note?'<br>Note: '+esc(o.customer.note):''}${o.prize?'<br><b style="color:var(--yellow)">Free upgrade code used: '+esc(o.prize)+' (−$'+(o.totals.prize||0)+')</b>':''}${o.payment&&o.payment.id?'<br>Clover payment: '+esc(o.payment.id):''}${o.remaining?'<br><b class="warnflag">After declines: '+money(o.remaining.total)+' + tax for what is left (adjust the invoice by hand)</b>':''}</p>
+      <div class="lines">${o.tags.map((t,i)=>{
+        const fc=t.finish==='fullcolor';
+        const addon=[t.photo&&!fc?'photo':null,fc&&t.raised?'raised lettering':null, t.color&&t.color!=='none'?(t.color==='line'?'colored line':'colored icon')+(t.colorHue?' ('+t.colorHue+')':''):null].filter(Boolean).join(' + ');
+        const artInfo=fc?`<br><span class="meta"><span class="mach mach--uv">UV print · xTool O1</span>Art: <b>${t.art==='upload'?'Upload your own':'We design it'}</b>${t.style?' ('+esc(t.style)+')':''}${t.photoMime?' · '+esc(t.photoMime):''}${reviewMeta(t)}</span>`:`<br><span class="meta"><span class="mach mach--fiber">Fiber laser</span>${reviewMeta(t)}</span>`;
+        const thumb=t.photo?thumbHtml(o,i,t.photoMime,o.id+'-tag'+(i+1)+'-photo',t.declined,'Customer photo for tag '+(i+1)):tagSVG(t);
+        return `<div class="line">${thumb}<div>${t.qty}&times; ${esc(t.shape)} &middot; ${esc(SIZE[t.size]||t.size)} &middot; ${fc?'<b>Full color print</b>':esc(t.finish)} &middot; ${esc(t.font||'block')}${t.icon&&t.icon!=='none'?' + '+esc(t.icon):''}${addon?' &middot; <b>'+esc(addon)+'</b>':''}${artInfo}<br><span class="meta">Front: ${t.photo&&!fc?'(photo, see thumbnail)':esc(t.front.join(' / '))||'—'}<br>Back: ${esc(t.back.join(' / '))||'—'}</span>${SDTSmart.badge(o,i,t)}</div></div>`;
+      }).join('')}
+        ${(o.ornaments||[]).map((x,j)=>{const stl=x.tier==='stainless';const th=x.photo?thumbHtml(o,x.photoIndex,x.photoMime,o.id+'-ornament'+(j+1)+'-art',x.declined,'Customer image for ornament '+(j+1)):'';
+          return `<div class="line">${th}<div>${x.qty}&times; <b>Holiday ornament</b> &middot; ${stl?'engraved stainless bone':'printed clear acrylic'} &middot; ${esc(x.name)}, ${esc(x.year)}${x.raised&&!stl?' &middot; <b>raised name and year</b>':''}<br><span class="meta"><span class="mach ${stl?'mach--fiber':'mach--uv'}">${stl?'Fiber laser · grayscale engraving':'UV print · xTool O1'}</span>Art: <b>${x.art==='upload'?'Upload your own':'We design it'}</b>${x.style?' ('+esc(x.style)+')':''}${x.photoMime?' · '+esc(x.photoMime):''}${reviewMeta(x)}</span></div></div>`;}).join('')}
+        ${o.prints.map(p=>`<div class="line"><div>${p.qty}&times; <b>${esc(p.item)}</b> ${p.price?money(p.price):'(quote)'}${p.note?'<br><span class="meta">'+esc(p.note)+'</span>':''}</div></div>`).join('')}</div>
+      ${o.ownerNote?`<p class="meta">Owner note: ${esc(o.ownerNote)}</p>`:''}
+      ${shipPanel(o)}
+      <div class="acts"><button class="btn btn--ghost" data-copy>Copy for Clover</button>
+        <select data-status>${STATUSES.map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select>
+        <button class="btn btn--ghost" data-note>Note</button>
+        ${SDTSmart.actions(o)}
+        ${[...o.tags.map((t,i)=>t.photo&&!t.declined?`<button class="btn btn--ghost" data-decline="t${i}">Decline upload · tag ${i+1}</button>`:''),...(o.ornaments||[]).map((x,j)=>x.photo&&!x.declined?`<button class="btn btn--ghost" data-decline="o${j}">Decline upload · ornament ${j+1}</button>`:'')].join('')}
+        ${o.tags.map((t,i)=>t.finish==='fullcolor'?`<button class="btn btn--solid" data-fcjson="t${i}">Print layout JSON · tag ${i+1}</button><button class="btn btn--solid" data-fcsheet="t${i}">Print sheet · tag ${i+1}</button>${t.photo?`<button class="btn btn--ghost" data-fcart="t${i}">Art file · tag ${i+1}</button>`:''}`:`<button class="btn btn--solid" data-lb="${i}">LightBurn SVG · tag ${i+1}</button>`).join('')}
+        ${(o.ornaments||[]).map((x,j)=>x.tier==='acrylic'?`<button class="btn btn--solid" data-fcjson="o${j}">Print layout JSON · ornament ${j+1}</button><button class="btn btn--solid" data-fcsheet="o${j}">Print sheet · ornament ${j+1}</button>${x.photo?`<button class="btn btn--ghost" data-fcart="o${j}">Art file · ornament ${j+1}</button>`:''}`:`<button class="btn btn--ghost" data-fcart="o${j}">Photo file · ornament ${j+1} (fiber)</button>`).join('')}</div>
+    </article>`).join(''):`<p class="empty">Nothing here.</p>`;
+    loadPhotoThumbs();
+  }
+  /* ---- customer photo thumbnails: an <img src> can't carry the Bearer admin header, so each photo is
+     fetched with auth and turned into a blob URL. Cached per order+tag index so re-render (status
+     change, tab switch) doesn't re-fetch what's already loaded. ---- */
+  const photoCache={};
+  async function loadPhotoThumbs(){
+    for(const img of $$('.ph-thumb')){
+      if(img.dataset.svg&&!photoCache[img.dataset.id+':'+img.dataset.idx])continue; // SVG: only on click
+      await loadThumb(img);
+    }
+  }
+  async function loadThumb(img){
+    const id=img.dataset.id, idx=img.dataset.idx, cacheKey=id+':'+idx;
+    const dl=document.querySelector(`a.ph-dl[data-id="${CSS.escape(id)}"][data-idx="${CSS.escape(idx)}"]`);
+    const setDl=(blobType)=>{ if(dl&&dl.dataset.base)dl.download=dl.dataset.base+'.'+extOf(blobType); };
+    if(photoCache[cacheKey]){ img.src=photoCache[cacheKey].url; if(dl){dl.href=photoCache[cacheKey].url;setDl(photoCache[cacheKey].type);} return; }
+    try{
+      const r=await fetch(`/api/photo?id=${encodeURIComponent(id)}&t=${encodeURIComponent(idx)}`,{headers:{authorization:'Bearer '+key}});
+      if(!r.ok)throw new Error('missing');
+      const blob=await r.blob(); const url=URL.createObjectURL(blob);
+      photoCache[cacheKey]={url,type:blob.type}; img.src=url; if(dl){dl.href=url;setDl(blob.type);}
+    }catch{ img.alt='Photo failed to load'; }
+  }
+  async function loadFb(){
+    try{
+      const r=await fetch('/api/roast-feedback',{headers:{authorization:'Bearer '+key}}); if(!r.ok) return;
+      const d=await r.json(); const c=d.counts||{}; const L=d.learn||{};
+      const rows=(d.rows||[]).slice(0,30).map(x=>{const ro=x.roast||{}; const cv=Object.keys(x.custom||{}).map(i=>{const l=(ro.customs||[])[i]; return (x.custom[i]?'\u{1F44D} ':'\u{1F44E} ')+esc(l?[l.l1,l.l2,l.l3].filter(Boolean).join(' / '):'#'+i);}).join('<br>');
+        return `<tr><td>${esc(new Date(x.at).toLocaleDateString())}</td><td>${esc(ro.name||'')}</td><td>${esc({fire:'\u{1F525} fire',meh:'\u{1F610} meh',toofar:'\u{1F6AB} too far'}[x.vote]||'')}</td><td>${esc(String(ro.roast||'').slice(0,100))}</td><td>${cv}</td></tr>`;}).join('');
+      $('#fbBox').innerHTML=`<p>\u{1F525} ${c.fire||0} &nbsp; \u{1F610} ${c.meh||0} &nbsp; \u{1F6AB} ${c.toofar||0}</p><div style="overflow-x:auto"><table style="width:100%;font-size:.85rem;border-collapse:collapse"><thead><tr><th align="left">Date</th><th align="left">Dog</th><th align="left">Vote</th><th align="left">Roast</th><th align="left">Custom votes</th></tr></thead><tbody>${rows||'<tr><td colspan="5">No feedback yet.</td></tr>'}</tbody></table></div><p style="font-size:.8rem;opacity:.7">Learning: ${(L.landed||[]).length} landed, ${(L.flat||[]).length} flat, ${(L.toofar||[]).length} too far</p>`;
+      $('#fbSec').hidden=false;
+    }catch{}
+  }
+  async function load(){try{const [d]=await Promise.all([api('GET'),loadShipCfg()]);orders=d.orders||[];render();SDTSmart.refresh();loadFb();try{localStorage.setItem('sdt-admin',key);}catch{}}catch(e){$('#list').innerHTML=`<p class="empty">${esc(e.message)}</p>`;}}
+  $('#keyForm').addEventListener('submit',e=>{e.preventDefault();key=$('#key').value.trim();load();});
+  $('#tabs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;if(b.dataset.t==='refresh')return load();tab=b.dataset.t;render();});
+  /* ---- LightBurn export: real-size SVG (mm), text as paths, outline on its own layer for alignment ---- */
+  const fontCache={};
+  async function loadFont(k){ if(fontCache[k]) return fontCache[k]; const buf=await (await fetch(SDTLayout.FONT_BASE+SDTLayout.FONT_TTF[k])).arrayBuffer(); return fontCache[k]=opentype.parse(buf); }
+  async function lightburnSVG(t, side){ const font=await loadFont(SDTLayout.fontKey(t)); const q=side==='back'?SDTSmart.qrOpts(t):null; return SDTLayout.svg(t, side, font, q?{qr:q}:undefined); }
+  function download(name,text,mime){ const b=new Blob([text],{type:mime||'image/svg+xml'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); }
+  /* ---- Full color (xTool O1): print layout JSON, art file, print sheet ---- */
+  const extOf=(m)=>({'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/svg+xml':'svg'}[String(m||'').split(';')[0]]||'bin');
+  async function fetchArt(o,idx){const r=await fetch(`/api/photo?id=${encodeURIComponent(o.id)}&t=${encodeURIComponent(idx)}`,{headers:{authorization:'Bearer '+key}});if(!r.ok)throw new Error('image not found');return r.blob();}
+  function blobDims(blob){return new Promise(res=>{if(/svg/.test(blob.type))return res({w:0,h:0});const u=URL.createObjectURL(blob);const im=new Image();im.onload=()=>{res({w:im.naturalWidth,h:im.naturalHeight});URL.revokeObjectURL(u);};im.onerror=()=>{res({w:0,h:0});URL.revokeObjectURL(u);};im.src=u;});}
+  const blobDataUrl=(blob)=>new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=()=>rej(new Error('read failed'));fr.readAsDataURL(blob);});
+  // ref "t<i>" = tag i, "o<j>" = ornament j. Returns { spec, photoIdx, item } for the printer layout.
+  function fcRef(o,ref){const n=+ref.slice(1);
+    if(ref[0]==='t'){const t=o.tags[n];return{photoIdx:n,has:!!t.photo,mime:t.photoMime,label:'tag'+(n+1),spec:{product:'tag',shape:t.shape,size:t.size,lines:t.front,back:t.back,font:t.font,art:t.art,style:t.style,raised:t.raised,rightsAcknowledged:!!(t.ack&&t.ack.ownRights),orderId:o.id,item:'tag'+(n+1)}};}
+    const x=o.ornaments[n];return{photoIdx:x.photoIndex,has:!!x.photo,mime:x.photoMime,label:'ornament'+(n+1),spec:{product:'ornament',ornamentTier:x.tier,shape:'round',size:'ornament',lines:[x.name,x.year],back:[],font:'bungee',art:x.art,style:x.style,raised:x.raised,rightsAcknowledged:!!(x.ack&&x.ack.ownRights),orderId:o.id,item:'ornament'+(n+1)}};}
+  async function fcBuild(o,ref){const r=fcRef(o,ref);let blob=null,dims={w:0,h:0};
+    if(r.has){blob=await fetchArt(o,r.photoIdx);dims=await blobDims(blob);}
+    const file=`${o.id}-${r.label}-art.${extOf((blob&&blob.type)||r.mime)}`;
+    if(blob)r.spec.image={file,mime:blob.type||r.mime,w:dims.w,h:dims.h};
+    const font=await loadFont(SDTLayout.fontKey({font:r.spec.font}));
+    return{layout:SDTLayout.fullcolorLayout(r.spec,font),blob,file,label:r.label};}
+  $('#list').addEventListener('click',async e=>{
+    const ls=e.target.closest('[data-loadsvg]'); if(ls){ const im=ls.parentElement.querySelector('.ph-thumb'); ls.remove(); if(im)await loadThumb(im); return; }
+    const dc=e.target.closest('[data-decline]'); if(dc){ const a1=dc.closest('article'),o1=orders.find(x=>x.id===a1.dataset.id);
+      if(!confirm('Decline this upload? The image is deleted now and '+o1.customer.email+' is emailed that we cannot print it.'))return;
+      dc.disabled=true; try{ const d=await api('POST',{id:o1.id,action:'decline',item:dc.dataset.decline}); if(d.error)throw new Error(d.error); Object.assign(o1,d.order); render(); toast('Declined. Image deleted'+(d.emailed?', customer emailed.':'. Customer NOT emailed: tell them yourself.')); }catch(err){ toast('Decline failed: '+err.message); dc.disabled=false; } return; }
+    const fb=e.target.closest('[data-fcjson],[data-fcsheet],[data-fcart]'); if(fb){const a0=fb.closest('article'),o0=orders.find(x=>x.id===a0.dataset.id);fb.disabled=true;
+      // Safari only allows window.open inside the click itself, so the sheet window is opened first and filled after the awaits.
+      const sheetWin=fb.dataset.fcsheet?window.open('','_blank'):null;
+      if(fb.dataset.fcsheet&&!sheetWin){toast('Allow pop-ups to open the print sheet.');fb.disabled=false;return;}
+      try{
+        if(fb.dataset.fcart){const r=fcRef(o0,fb.dataset.fcart);const blob=await fetchArt(o0,r.photoIdx);const u=URL.createObjectURL(blob);const l=document.createElement('a');l.href=u;l.download=`${o0.id}-${r.label}-art.${extOf(blob.type)}`;l.click();setTimeout(()=>URL.revokeObjectURL(u),2000);toast('Art file downloaded.');}
+        else if(fb.dataset.fcjson){const b=await fcBuild(o0,fb.dataset.fcjson);download(`${o0.id}-${b.label}-print.json`,JSON.stringify(b.layout,null,2),'application/json');if(b.blob){const u=URL.createObjectURL(b.blob);const l=document.createElement('a');l.href=u;l.download=b.file;l.click();setTimeout(()=>URL.revokeObjectURL(u),2000);}toast('Print layout JSON'+(b.blob?' and art file':'')+' downloaded.');}
+        else{const b=await fcBuild(o0,fb.dataset.fcsheet);const href=b.blob?await blobDataUrl(b.blob):null;
+          const svg=SDTLayout.fullcolorSVG(b.layout,{imageHref:href,mascotHref:location.origin+'/assets/mascot.svg',marks:true});
+          const L=b.layout,raisedList=L.elements.filter(x=>x.raised).map(x=>x.id),flat=L.elements.filter(x=>!x.raised&&x.layer!=='cut').map(x=>x.id);
+          const w=sheetWin;
+          w.document.write(`<!doctype html><meta charset="utf-8"><title>${esc(o0.id)} ${esc(b.label)} print sheet</title><style>@page{margin:10mm}body{font:13px/1.5 system-ui,sans-serif;margin:12mm;color:#111}h1{font-size:16px;margin:0 0 4px}code{background:#eee;padding:0 4px}.sheet{margin:10mm 0;padding:6mm;border:1px dashed #999;display:inline-block;background:#fff}.sheet svg{display:block}@media print{.noprint{display:none}.sheet{border:0;padding:0;margin:0}}</style><h1>${esc(o0.id)} · ${esc(b.label)} · ${L.tagMm[0]} × ${L.tagMm[1]} mm</h1><p class="noprint"><b>On the xTool O1:</b> place the blank on the bed, run the camera scan, and align the art to the auto-mask. The sheet's mm outline is a reference, not the mask.</p><p class="noprint">Print at <b>100%</b> (no fit to page). The red line is the reference outline and the hanging hole; the sheet below is exactly ${L.tagMm[0]} × ${L.tagMm[1]} mm. Art: <b>${esc(L.art.mode)}</b>${L.art.style?' ('+esc(L.art.style)+')':''}. Layers: color, white (underlay, full coverage), raised. <b>Raised:</b> ${raisedList.length?esc(raisedList.join(', ')):'none'}. Flat: ${esc(flat.join(', '))}. Rights acknowledged: <b>${L.art.rightsAcknowledged?'yes':'NO'}</b>.</p><div class="sheet">${svg}</div><p class="noprint">Layout JSON has the same numbers (button on the orders page).</p>`);
+          w.document.close();}
+      }catch(err){ if(sheetWin)sheetWin.close(); toast('Failed: '+err.message); } fb.disabled=false; return; }
+    const a=e.target.closest('article');if(!a)return;const o=orders.find(x=>x.id===a.dataset.id);if(!o)return;
+    const sb=e.target.closest('[data-smart]'); if(sb){ await SDTSmart.handle(sb,o); return; }
+    const lb=e.target.closest('[data-lb]'); if(lb){ const t=o.tags[+lb.dataset.lb]; lb.disabled=true; try{ download(`${o.id}-tag${+lb.dataset.lb+1}-front.svg`, await lightburnSVG(t,'front')); if((t.back||[]).some(Boolean)) download(`${o.id}-tag${+lb.dataset.lb+1}-back.svg`, await lightburnSVG(t,'back')); toast('SVG files downloaded. Import into LightBurn at 1:1.'); }catch(err){ toast('Export failed: '+err.message); } lb.disabled=false; return; }
+    if(e.target.closest('[data-copy]')){try{await navigator.clipboard.writeText(cloverText(o));toast('Copied. Paste into Clover Virtual Terminal → Send Invoice.');}catch{prompt('Copy this:',cloverText(o));}}
+    if(e.target.closest('[data-note]')){const n=prompt('Owner note (tracking #, remake, etc.)',o.ownerNote||'');if(n===null)return;const d=await api('POST',{id:o.id,ownerNote:n});Object.assign(o,d.order);render();}
+  });
+  $('#list').addEventListener('change',async e=>{const s=e.target.closest('[data-status]');if(!s)return;const a=e.target.closest('article');const o=orders.find(x=>x.id===a.dataset.id);let d=await api('POST',{id:o.id,status:s.value});
+    if(d.blockers){ if(SDTSmart.askOverride({data:d})) d=await api('POST',{id:o.id,status:s.value,smartOverride:true}); else { render(); return; } }
+    if(d.error){ toast(d.error); render(); return; }
+    Object.assign(o,d.order);render();SDTSmart.refresh();toast(o.id+' → '+o.status);});
+  /* ---- Ship it handlers ---- */
+  const findOrder=(el)=>{const a=el.closest('article');return a&&orders.find(x=>x.id===a.dataset.id);};
+  $('#list').addEventListener('input',e=>{const t=e.target.closest('[data-track]');if(!t)return;const o=findOrder(t);if(o)trackDraft[o.id]=t.value;t.removeAttribute('aria-invalid');const er=t.closest('[data-ship]').querySelector('[data-trackerr]');if(er)er.textContent='';});
+  $('#list').addEventListener('change',async e=>{const f=e.target.closest('[data-shipfile]');if(!f||!f.files||!f.files[0])return;e.stopPropagation();const o=findOrder(f);if(!o)return;
+    const file=f.files[0];shipBusy[o.id]='photo';render();
+    try{const image=await shrinkPhoto(file);const d=await shipApi({id:o.id,action:'photo',image});Object.assign(o,d.order);toast('Tag photo saved.');}
+    catch(err){toast('Photo failed: '+err.message);}
+    delete shipBusy[o.id];render();},true);
+  $('#list').addEventListener('click',async e=>{
+    const go=e.target.closest('[data-ship-go]'), re=e.target.closest('[data-ship-resend]');if(!go&&!re)return;
+    const o=findOrder(e.target);if(!o||shipBusy[o.id])return;const box=e.target.closest('[data-ship]');
+    if(re){if(!confirm(`Email ${o.customer.email} the "${o.customer.delivery==='pickup'?'ready':'shipped'}" message${o.shipEmail&&o.shipEmail.ok?' again':''}?`))return;
+      shipBusy[o.id]='resend';render();
+      try{const d=await shipApi({id:o.id,action:'resend'});Object.assign(o,d.order);toast(d.email&&d.email.ok?'Email sent.':'Email not sent: '+((d.email&&d.email.error)||'?'));}catch(err){toast(err.message);}
+      delete shipBusy[o.id];render();return;}
+    const inp=box.querySelector('[data-track]');let tracking='';
+    if(inp){const t=cleanTracking(inp.value);if(!t.ok){inp.setAttribute('aria-invalid','true');box.querySelector('[data-trackerr]').textContent=t.error;inp.focus();return;}tracking=t.number;}
+    const already=Boolean(o.shipped&&o.shipped.at);
+    const mail=!already&&Boolean(box.querySelector('[data-sendmail]:checked'));
+    if(mail&&!o.shipPhoto&&!confirm('No tag photo yet. The Bulldog Promise says they get one. Send the email without it?'))return;
+    shipBusy[o.id]='ship';render();
+    try{let d;
+      try{d=await shipApi({id:o.id,action:'ship',tracking,email:mail});}
+      catch(e1){ if(SDTSmart.askOverride(e1)) d=await shipApi({id:o.id,action:'ship',tracking,email:mail,smartOverride:true}); else throw e1; }
+      Object.assign(o,d.order);delete trackDraft[o.id];SDTSmart.refresh();
+      const em=d.email||{};toast(already?'Tracking saved.':(o.id+' → '+o.status+(mail?(em.ok?' · email sent':' · email NOT sent: '+(em.error||'?')):'')));}
+    catch(err){toast(err.message);}
+    delete shipBusy[o.id];render();});
+  SDTSmart.init({key:()=>key,orders:()=>orders,toast,esc,rerender:()=>render()});
+  if(key)load();
+
+  /* ---- Wall of Shame ---- */
+  async function wallLoad(){
+    $('#wallSec').hidden=false;
+    try{const d=await (await fetch('/api/wall',{cache:'no-store'})).json();
+      $('#wallList').innerHTML=(d.entries||[]).map(e=>`<div style="display:flex;gap:.6rem;align-items:center;margin:.4rem 0"><img src="${esc(e.image)}" width="48" height="48" style="object-fit:cover;border-radius:8px"><span style="flex:1">${esc(e.name)} (${esc(e.breed)}) - ${esc(e.roast)}</span><button class="btn btn--ghost" data-wdel="${esc(e.id)}" style="padding:.4rem .8rem;font-size:.65rem;min-height:0">Delete</button></div>`).join('')||'<p class="empty">No entries.</p>';
+    }catch{}
+  }
+  function resizeJpeg(file){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>{let w=im.width,h=im.height;const m=1200/Math.max(w,h);if(m<1){w=Math.round(w*m);h=Math.round(h*m);}
+    let q=.8;const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);
+    const go=()=>{const u=c.toDataURL('image/jpeg',q).split(',')[1];if(u.length*3/4>290*1024&&q>.3){q-=.1;return go();}u.length*3/4>300*1024?rej(new Error('Image still over 300KB')):res(u);};go();};im.onerror=()=>rej(new Error('Bad image'));im.src=URL.createObjectURL(file);});}
+  $('#wallForm').addEventListener('submit',async(ev)=>{ev.preventDefault();
+    if(!$('#wConsent').checked)return toast('Consent required');
+    try{const image=await resizeJpeg($('#wImg').files[0]);
+      const r=await fetch('/api/wall',{method:'POST',headers:{authorization:'Bearer '+key,'content-type':'application/json'},body:JSON.stringify({name:$('#wName').value,breed:$('#wBreed').value,line1:$('#wL1').value,line2:$('#wL2').value,roast:$('#wRoast').value,city:$('#wCity').value,consent:true,image})});
+      const d=await r.json();if(!r.ok)throw new Error(d.error||'Failed');toast('Added');ev.target.reset();wallLoad();
+    }catch(e){toast(e.message);}});
+  $('#wallList').addEventListener('click',async(ev)=>{const id=ev.target.dataset&&ev.target.dataset.wdel;if(!id||!confirm('Delete this entry?'))return;
+    const r=await fetch('/api/wall?id='+encodeURIComponent(id),{method:'DELETE',headers:{authorization:'Bearer '+key}});toast(r.ok?'Deleted':'Failed');wallLoad();});
+  $('#keyForm').addEventListener('submit',()=>setTimeout(()=>{if(key)wallLoad();},400));
+  if(key)wallLoad();
+})();
+</script>
+</body>
+</html>

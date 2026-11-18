@@ -1,0 +1,23 @@
+{
+  "apiBase": "https://saltydogtags.com",
+  "adminKeyFile": "../.admin-key",
+  "queueDir": "~/SaltyDog Queue",
+  "pollSeconds": 300,
+  "kvPlan": "unknown",
+  "eligibleStatuses": ["paid"],
+  "ui": { "host": "127.0.0.1", "port": 8150 },
+  "lightburn": { "host": "127.0.0.1", "cmdPort": 19840, "replyPort": 19841, "timeoutMs": 2000, "minLoadGapMs": 5000, "pingEverySeconds": 30 },
+  "autoLoad": true,
+  "autoLoadAfterEngraved": true,
+  "notify": true,
+  "deviceName": "JCZFiber (USB-Lite)",
+  "fieldCenter": [100, 100],
+  "finishPreset": {
+    "black": "anodized", "red": "anodized", "royal": "anodized", "sky": "anodized", "green": "anodized",
+    "yellow": "anodized", "silver": "anodized", "pink": "anodized", "hotpink": "anodized",
+    "stainless": "stainless", "ssblack": "stainless", "navy": "stainless", "gold": "stainless",
+    "bronze": "stainless", "rainbow": "stainless",
+    "polished": "polished",
+    "brass": "brass"
+  }
+}

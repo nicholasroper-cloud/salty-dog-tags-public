@@ -1,0 +1,16 @@
+{
+  "name": "qr-brass",
+  "label": "QR code on brass",
+  "status": "untested",
+  "source": "seed copied from the brass preset (crosshatch on). Run the QR test matrix, tune in LightBurn, then `node cli.mjs preset import <file.lbrn2> qr-brass --layer 2`",
+  "updatedAt": "2026-11-16",
+  "cutSetting": {
+    "maxPower": 32,
+    "speed": 150,
+    "interval": 0.008,
+    "frequency": 900000,
+    "QPulseWidth": 6,
+    "numPasses": 2,
+    "crossHatch": 1
+  }
+}

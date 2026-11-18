@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/feeds/*",
+    "/styles.css",
+    "/sayings.css",
+    "/app.js",
+    "/arcade.js",
+    "/roast.js",
+    "/share.js",
+    "/tag-layout.js",
+    "/tag-qr.js",
+    "/tag-qr-finishes.json",
+    "/vendor/*",
+    "/t.js",
+    "/t.css",
+    "/claim.js",
+    "/my.js",
+    "/slip.css",
+    "/robots.txt",
+    "/sitemap.xml",
+    "/llms.txt",
+    "/llms-full.txt",
+    "/340e80e49fce4613a1997e1801402e13.txt"
+  ]
+}

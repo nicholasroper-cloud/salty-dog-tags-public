@@ -1,0 +1,42 @@
+/* Finder page styles: self-hosted, system fonts, no external requests (CSP default-src 'self'). */
+:root{color-scheme:light dark;--bg:#fff;--fg:#14121c;--mut:#5b5870;--acc:#e6007e;--line:#d9d6e3;--card:#f6f4fb}
+@media (prefers-color-scheme:dark){:root{--bg:#120d22;--fg:#fff;--mut:#b8b2d0;--line:#3a3350;--card:#1b1530}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.f{max-width:30rem;margin:0 auto;padding:1.4rem 1.2rem 3rem}
+.f h1{font-size:2.2rem;line-height:1.1;margin:.2rem 0 .5rem}
+.f h2{font-size:1.2rem;margin:.2rem 0 .4rem}
+.f__lead{margin:0 0 1rem;color:var(--mut)}
+.f__big{font-size:1.25rem;font-weight:700;margin:1rem 0}
+.f__fine{font-size:.85rem;color:var(--mut);margin:.9rem 0 0}
+.f__note{margin:1rem 0;padding:.9rem 1rem;border-left:4px solid var(--acc);background:var(--card);border-radius:0 10px 10px 0;white-space:pre-wrap;word-break:break-word}
+.f__btn{display:block;width:100%;min-height:52px;margin:.6rem 0;padding:.8rem 1rem;border:2px solid var(--fg);border-radius:14px;background:transparent;color:var(--fg);font:inherit;font-weight:700;text-align:center;text-decoration:none;cursor:pointer}
+.f__btn--solid{background:var(--acc);border-color:var(--acc);color:#fff}
+a.f__btn{display:inline-block;width:calc(50% - .4rem)}
+.f__btn:disabled{opacity:.6}
+.f__form{margin:.6rem 0;padding:1rem;background:var(--card);border-radius:14px}
+.f__form label{display:block;font-size:.9rem;font-weight:600;margin:.6rem 0 .25rem}
+.f__form textarea,.f__form input{width:100%;font:inherit;padding:.7rem;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.f__hp{position:absolute!important;left:-9999px!important;height:0;width:0;opacity:0}
+.f__status{min-height:1.4em;margin:.5rem 0 0;font-size:.95rem}.is-ok{color:#0a7d3b}.is-bad{color:#c0143c}
+.f__sheet{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:1.2rem 1.2rem calc(1.2rem + env(safe-area-inset-bottom));background:var(--bg);border-top:3px solid var(--acc);box-shadow:0 -10px 30px rgba(0,0,0,.25);border-radius:18px 18px 0 0}
+.f__sheet[hidden],.f__form[hidden],.f__btn[hidden]{display:none}
+.f__brand{margin:2.5rem 0 0;text-align:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+
+/* ---- /claim and /my (owner pages share this stylesheet) ---- */
+.m{max-width:40rem}
+.m h1{font-size:1.9rem}
+.m__card{margin:1.2rem 0;padding:1rem 1.1rem;border:2px solid var(--line);border-radius:16px;background:var(--card)}
+.m__card h2{margin:0 0 .6rem}
+.m label{display:block;font-size:.9rem;font-weight:600;margin:.7rem 0 .25rem}
+.m input[type=text],.m input[type=email],.m input[type=tel],.m select,.m textarea{width:100%;font:inherit;padding:.65rem;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.m .row{display:flex;gap:.6rem;flex-wrap:wrap}.m .row>*{flex:1 1 9rem}
+.m__chk{display:flex;gap:.6rem;align-items:flex-start;font-weight:400!important;margin:.5rem 0}
+.m__chk input{width:1.3rem;height:1.3rem;flex:none;margin-top:.2rem;accent-color:var(--acc)}
+.m__btn{display:inline-block;min-height:46px;margin:.4rem .4rem 0 0;padding:.6rem 1.1rem;border:2px solid var(--fg);border-radius:12px;background:transparent;color:var(--fg);font:inherit;font-weight:700;cursor:pointer}
+.m__btn--solid{background:var(--acc);border-color:var(--acc);color:#fff}.m__btn--danger{border-color:#c0143c;color:#c0143c}
+.m__fine{font-size:.82rem;color:var(--mut);margin:.4rem 0}
+.m__msg{min-height:1.3em;font-size:.95rem;margin:.5rem 0}
+.m__act{margin:.4rem 0;padding:.5rem .7rem;border-left:3px solid var(--line);font-size:.92rem;word-break:break-word;white-space:pre-wrap}
+.m__badge{display:inline-block;padding:.1rem .55rem;border-radius:999px;border:1px solid var(--line);font-size:.75rem;margin-left:.4rem}
+.m__ok{color:#0a7d3b}.m__bad{color:#c0143c}

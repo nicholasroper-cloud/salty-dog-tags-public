@@ -1,0 +1,224 @@
+{
+  "title": "Dog Tags by Breed: Funny Engraved Tags | Salty Dog Tags",
+  "description": "Funny engraved dog tags written for your breed: bulldogs, frenchies, labs, goldens, shepherds, huskies and more. Laser engraved in Lehi, Utah. From $12.",
+  "lead": "Every breed has its own crimes. We started with our seven English bulldogs and kept going. Pick your dog, steal a saying, put your number on the back. Not sure on size? See the <a href=\"/guides/dog-tag-size-guide-by-breed/\">size guide by breed</a>.",
+  "note": "Don't see your dog? The <a href=\"/sayings/\">full sayings list</a> works on any breed, and the builder takes your own line.",
+  "breeds": [
+    {
+      "slug": "bulldog",
+      "name": "English Bulldog",
+      "samples": [
+        "I snore. It's a lifestyle.",
+        "Drool happens."
+      ],
+      "link": "English Bulldog tags"
+    },
+    {
+      "slug": "frenchie",
+      "name": "French Bulldog",
+      "samples": [
+        "Bat ears. Hears everything. Ignores it all.",
+        "Not a pug. Stop asking."
+      ],
+      "link": "French Bulldog tags"
+    },
+    {
+      "slug": "golden-retriever",
+      "name": "Golden Retriever",
+      "samples": [
+        "Will bring you a shoe. Not your shoe.",
+        "Sheds year-round. You're wearing me now."
+      ],
+      "link": "Golden Retriever tags"
+    },
+    {
+      "slug": "lab",
+      "name": "Labrador",
+      "samples": [
+        "Starving. (Was fed at 6.)",
+        "If found, check the nearest pond."
+      ],
+      "link": "Labrador tags"
+    },
+    {
+      "slug": "german-shepherd",
+      "name": "German Shepherd",
+      "samples": [
+        "German shedder. Return with lint roller.",
+        "Not a police dog. Acts like one anyway."
+      ],
+      "link": "German Shepherd tags"
+    },
+    {
+      "slug": "husky",
+      "name": "Husky",
+      "samples": [
+        "Not lost. Escaped. Again.",
+        "Fence is a suggestion."
+      ],
+      "link": "Husky tags"
+    },
+    {
+      "slug": "aussie",
+      "name": "Australian Shepherd",
+      "samples": [
+        "Herds kids. Unpaid. Unstoppable.",
+        "Needs a job. Made up my own."
+      ],
+      "link": "Aussie tags"
+    },
+    {
+      "slug": "beagle",
+      "name": "Beagle",
+      "samples": [
+        "Nose on. Ears off.",
+        "If found, I followed a smell."
+      ],
+      "link": "Beagle tags"
+    },
+    {
+      "slug": "bernese",
+      "name": "Bernese Mountain Dog",
+      "samples": [
+        "100 lbs. Still a lap dog.",
+        "Sheds a second dog every week."
+      ],
+      "link": "Bernese tags"
+    },
+    {
+      "slug": "boston-terrier",
+      "name": "Boston Terrier",
+      "samples": [
+        "Tuxedo on. Manners off.",
+        "Formal wear. Informal gas."
+      ],
+      "link": "Boston tags"
+    },
+    {
+      "slug": "boxer",
+      "name": "Boxer",
+      "samples": [
+        "Boxer. Hugs with fists.",
+        "Wiggles so hard my whole body agrees."
+      ],
+      "link": "Boxer tags"
+    },
+    {
+      "slug": "cavalier",
+      "name": "Cavalier King Charles",
+      "samples": [
+        "Lap barnacle. Remove with snacks.",
+        "Zero prey drive. Full love drive."
+      ],
+      "link": "Cavalier tags"
+    },
+    {
+      "slug": "corgi",
+      "name": "Corgi",
+      "samples": [
+        "Short legs. Long list of demands.",
+        "Herds kids. Unpaid position."
+      ],
+      "link": "Corgi tags"
+    },
+    {
+      "slug": "dachshund",
+      "name": "Dachshund",
+      "samples": [
+        "Long dog. Short patience.",
+        "Not lost. Under a blanket."
+      ],
+      "link": "Dachshund tags"
+    },
+    {
+      "slug": "doberman",
+      "name": "Doberman",
+      "samples": [
+        "Looks scary. Scared of lizards.",
+        "Security system. Sleeps through burglars."
+      ],
+      "link": "Doberman tags"
+    },
+    {
+      "slug": "chihuahua",
+      "name": "Chihuahua",
+      "samples": [
+        "Tiny. Not sorry.",
+        "Fits in a purse. Runs the house."
+      ],
+      "link": "Chihuahua tags"
+    },
+    {
+      "slug": "doodle",
+      "name": "Goldendoodle & Labradoodle",
+      "samples": [
+        "Florida humidity did this to me.",
+        "Hypoallergenic. Emotionally? No."
+      ],
+      "link": "Goldendoodle & Labradoodle tags"
+    },
+    {
+      "slug": "great-dane",
+      "name": "Great Dane",
+      "samples": [
+        "Not a horse. Stop asking.",
+        "I think I'm a lap dog. I'm wrong."
+      ],
+      "link": "Great Dane tags"
+    },
+    {
+      "slug": "pomeranian",
+      "name": "Pomeranian",
+      "samples": [
+        "Mostly hair. Partly opinions.",
+        "4 pounds. 40 opinions."
+      ],
+      "link": "Pomeranian tags"
+    },
+    {
+      "slug": "poodle",
+      "name": "Poodle",
+      "samples": [
+        "Hypoallergenic. Allergic to rules.",
+        "Second smartest breed. Still outsmarts you."
+      ],
+      "link": "Poodle tags"
+    },
+    {
+      "slug": "pug",
+      "name": "Pug",
+      "samples": [
+        "Pug life. Mostly naps.",
+        "Snorts like a pig. Insists on pug."
+      ],
+      "link": "Pug tags"
+    },
+    {
+      "slug": "rottweiler",
+      "name": "Rottweiler",
+      "samples": [
+        "Looks scary. Wants belly rubs.",
+        "Security detail. Hired for snacks."
+      ],
+      "link": "Rottweiler tags"
+    },
+    {
+      "slug": "shih-tzu",
+      "name": "Shih Tzu",
+      "samples": [
+        "Not lost. Can't see past my bangs.",
+        "Bred for palaces. Your couch will do."
+      ],
+      "link": "Shih Tzu tags"
+    },
+    {
+      "slug": "yorkie",
+      "name": "Yorkie",
+      "samples": [
+        "7 pounds. All of it opinion.",
+        "Thinks I'm a rottweiler. Please don't correct me."
+      ],
+      "link": "Yorkie tags"
+    }
+  ]
+}

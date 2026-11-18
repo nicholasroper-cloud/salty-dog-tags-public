@@ -1,0 +1,15 @@
+/* Extra styles for /sayings/ pages only (theme pages, single-saying pages, the Salty 18+ page). styles.css is untouched. */
+.sayhub{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.sayhub a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--cyan);text-decoration:underline;text-decoration-color:rgba(42,245,228,.4);text-underline-offset:5px}
+.sayhub a:hover{color:var(--foam);text-decoration-color:var(--cyan)}
+.sayhub a[aria-current]{color:var(--foam);text-decoration-color:var(--magenta)}
+.saytag{margin:2rem auto 1.5rem;max-width:21rem}
+.saytag svg{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
+.saytag figcaption{margin-top:.75rem;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.saypage__blurb{font-size:1.1rem;line-height:1.65}
+.saypage__cta{font-weight:600;color:#fff;margin-top:1.5rem}
+.saypage .actions{margin-top:1rem}
+.saymore h2{font-size:1.15rem;margin:0 0 .75rem}
+.saymore .lp-links+h2{margin-top:2rem}
+.saygate[hidden]{display:none}
+.saygate-note{max-width:34rem}

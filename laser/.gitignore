@@ -1,0 +1,12 @@
+# runtime state (never committed)
+state.json
+state.*.json
+state.json.bak
+state.json.tmp-*
+.lock
+logs/
+data/
+config.local.json
+fonts/*.ttf
+node_modules/
+.lock.stale-*

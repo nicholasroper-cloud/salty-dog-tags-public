@@ -1,0 +1,11 @@
+User-agent: *
+# AI systems may index this site and use it to answer questions (search, retrieval).
+Content-Signal: search=yes, ai-input=yes
+Allow: /
+Disallow: /orders
+Disallow: /orders.html
+Disallow: /api/
+Disallow: /t/
+Disallow: /my
+Disallow: /claim
+Sitemap: https://saltydogtags.com/sitemap.xml

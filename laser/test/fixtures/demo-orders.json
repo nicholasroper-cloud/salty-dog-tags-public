@@ -1,0 +1,22 @@
+[
+  {
+    "id": "SDT-DEMO", "at": 1760638800000, "status": "paid",
+    "customer": { "name": "Demo Customer", "delivery": "ship" },
+    "tags": [
+      { "shape": "bone", "size": "medium", "finish": "black", "font": "block", "icon": "paw", "color": "none", "photo": false, "front": ["REX", "CALL MY HUMAN", "555-0142"], "back": ["IF FOUND", "CALL 555-0142"], "qty": 2 },
+      { "shape": "heart", "size": "small", "finish": "red", "font": "script", "icon": "none", "color": "none", "photo": false, "front": ["Lulu", "Princess of naps"], "back": [], "qty": 1 }
+    ],
+    "prints": [], "totals": { "total": 0 }
+  },
+  {
+    "id": "SDT-OOPS", "at": 1760638900000, "status": "paid",
+    "customer": { "name": "Demo Oops", "delivery": "pickup" },
+    "tags": [
+      { "shape": "bone", "size": "medium", "finish": "stainless", "font": "block", "icon": "none", "color": "none", "photo": true, "front": [], "back": ["CALL 555-0100"], "qty": 1, "photoBytes": 900 },
+      { "shape": "hydrant", "size": "medium", "finish": "black", "font": "block", "icon": "none", "color": "none", "photo": false, "front": ["HYDRANT"], "back": [], "qty": 1 },
+      { "shape": "bone", "size": "large", "finish": "stainless", "font": "slab", "icon": "none", "color": "line", "colorHue": "gold", "photo": false, "front": ["GOLDIE"], "back": [], "qty": 1 }
+    ],
+    "prints": [{ "item": "Benchy boat", "note": "demo print", "price": 5, "qty": 1 }],
+    "totals": { "total": 0 }
+  }
+]

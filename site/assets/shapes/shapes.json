@@ -1,0 +1,217 @@
+{
+ "viewBox": [
+  0,
+  0,
+  320,
+  240
+ ],
+ "note": "Coordinates in the 320x240 viewBox. area = text-safe rect (centre + size), hole = hole centre/radius. Each shape is drawn at its own px_per_mm so it fills the box.",
+ "shapes": {
+  "bone": {
+   "hole": {
+    "x": 160.0,
+    "y": 100.0,
+    "r": 12.76
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 145.0,
+    "w": 216.9,
+    "h": 49.4
+   },
+   "px_per_mm": 7.292,
+   "blank_mm": [
+    38.0,
+    25.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "heart": {
+   "hole": {
+    "x": 160.0,
+    "y": 82.5,
+    "r": 10.33
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 127.2,
+    "w": 121.3,
+    "h": 56.7
+   },
+   "px_per_mm": 5.904,
+   "blank_mm": [
+    38.0,
+    33.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "round": {
+   "hole": {
+    "x": 160.0,
+    "y": 74.1,
+    "r": 9.17
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 139.0,
+    "w": 112.9,
+    "h": 96.8
+   },
+   "px_per_mm": 5.238,
+   "blank_mm": [
+    32.0,
+    32.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "military": {
+   "hole": {
+    "x": 72.5,
+    "y": 115.9,
+    "r": 8.95
+   },
+   "area": {
+    "cx": 184.7,
+    "cy": 115.9,
+    "w": 191.3,
+    "h": 126.8
+   },
+   "px_per_mm": 5.112,
+   "blank_mm": [
+    51.0,
+    29.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "paw": {
+   "ready": true,
+   "hole": {
+    "x": 160.0,
+    "y": 62.8,
+    "r": 8.34
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 188.2,
+    "w": 99.9,
+    "h": 40.5
+   },
+   "px_per_mm": 4.765,
+   "blank_mm": [
+    37.0,
+    38.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "hydrant": {
+   "ready": true,
+   "hole": {
+    "x": 160.0,
+    "y": 71.8,
+    "r": 8.86
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 162.0,
+    "w": 94.1,
+    "h": 81.2
+   },
+   "px_per_mm": 5.06,
+   "blank_mm": [
+    30.2,
+    33.3
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "fish": {
+   "ready": true,
+   "hole": {
+    "x": 139.5,
+    "y": 88.8,
+    "r": 11.21
+   },
+   "area": {
+    "cx": 139.2,
+    "cy": 145.6,
+    "w": 144.6,
+    "h": 77.7
+   },
+   "px_per_mm": 6.406,
+   "blank_mm": [
+    38.0,
+    24.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "cat": {
+   "ready": true,
+   "hole": {
+    "x": 160.0,
+    "y": 89.0,
+    "r": 9.82
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 151.3,
+    "w": 110.8,
+    "h": 73.6
+   },
+   "px_per_mm": 6.546,
+   "blank_mm": [
+    23.0,
+    23.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "star": {
+   "ready": true,
+   "hole": {
+    "x": 160.0,
+    "y": 69.6,
+    "r": 8.55
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 151.1,
+    "w": 93.7,
+    "h": 81.4
+   },
+   "px_per_mm": 4.884,
+   "blank_mm": [
+    36.0,
+    35.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  },
+  "house": {
+   "ready": true,
+   "hole": {
+    "x": 160.0,
+    "y": 70.9,
+    "r": 8.73
+   },
+   "area": {
+    "cx": 160.0,
+    "cy": 168.9,
+    "w": 129.5,
+    "h": 92.2
+   },
+   "px_per_mm": 4.989,
+   "blank_mm": [
+    38.0,
+    35.0
+   ],
+   "ring_od_mm": 12.0,
+   "wire_mm": 1.2
+  }
+ }
+}

@@ -1,0 +1,14 @@
+[
+  { "id": "f01", "tag": { "shape": "bone", "size": "medium", "finish": "black", "font": "block", "icon": "paw", "color": "none", "photo": false, "front": ["REX", "CALL MY HUMAN", "555-0142"], "back": ["IF FOUND", "CALL 555-0142"], "qty": 2 } },
+  { "id": "f02", "tag": { "shape": "bone", "size": "medium", "finish": "polished", "font": "slab", "icon": "none", "color": "none", "photo": false, "front": ["WHISKY", "YES I LICK MY OWN JUNK"], "back": [], "qty": 1 } },
+  { "id": "f03", "tag": { "shape": "heart", "size": "small", "finish": "red", "font": "script", "icon": "heart", "color": "none", "photo": false, "front": ["Lulu", "Princess of naps"], "back": [], "qty": 1 } },
+  { "id": "f04", "tag": { "shape": "round", "size": "small", "finish": "black", "font": "bungee", "icon": "star", "color": "none", "photo": false, "front": ["MAX"], "back": [], "qty": 1 } },
+  { "id": "f05", "tag": { "shape": "round", "size": "large", "finish": "brass", "font": "marker", "icon": "none", "color": "none", "photo": false, "front": ["Biscuit", "call mom"], "back": ["555-0199"], "qty": 1 } },
+  { "id": "f06", "tag": { "shape": "round", "size": "medium", "finish": "sky", "font": "block", "icon": "anchor", "color": "none", "photo": false, "front": ["A", "B", "C", "D"], "back": [], "qty": 1 } },
+  { "id": "f07", "tag": { "shape": "military", "size": "medium", "finish": "stainless", "font": "block", "icon": "skull", "color": "none", "photo": false, "front": ["BRUNO", "12 MAIN ST", "LEHI UT", "555-0123"], "back": [], "qty": 1 } },
+  { "id": "f08", "tag": { "shape": "military", "size": "medium", "finish": "navy", "font": "slab", "icon": "bolt", "color": "none", "photo": false, "front": ["ZOOMIES"], "back": [], "qty": 1 } },
+  { "id": "f09", "tag": { "shape": "paw", "size": "medium", "finish": "pink", "font": "block", "icon": "crown", "color": "none", "photo": false, "front": ["QUEEN"], "back": [], "qty": 1 } },
+  { "id": "f10", "tag": { "shape": "bone", "size": "medium", "finish": "green", "font": "block", "icon": "none", "color": "none", "photo": false, "front": ["SUPERCALIFRAGILISTICEXPIALIDOCIOUS SUPERCALIFRAGILISTICEXPIALIDOCIOUS"], "back": [], "qty": 1 } },
+  { "id": "f11", "tag": { "shape": "bone", "size": "medium", "finish": "black", "font": "block", "icon": "none", "color": "none", "photo": false, "front": [], "back": ["IF FOUND", "I AM LOST", "555-0100"], "qty": 1 } },
+  { "id": "f12", "tag": { "shape": "heart", "size": "medium", "finish": "hotpink", "font": "bungee", "icon": "bone", "color": "none", "photo": false, "front": [], "back": ["GOOD", "BOY", "555-0111"], "qty": 1 } }
+]

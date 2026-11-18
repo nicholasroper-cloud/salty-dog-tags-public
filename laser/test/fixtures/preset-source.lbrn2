@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightBurnProject AppVersion="2.1.03" DeviceName="JCZFiber (USB-Lite)" FormatVersion="1" MaterialHeight="0" MirrorX="False" MirrorY="False" AskForSendName="True">
+    <CutSetting type="Cut">
+        <index Value="0"/>
+        <name Value="not a scan layer"/>
+        <maxPower Value="99"/>
+    </CutSetting>
+    <CutSetting type="Scan">
+        <index Value="1"/>
+        <name Value="C01 &amp; test"/>
+        <maxPower Value="70"/>
+        <maxPower2 Value="20"/>
+        <speed Value="800"/>
+        <frequency Value="50000"/>
+        <QPulseWidth Value="250"/>
+        <interval Value="0.02"/>
+        <scanOpt Value="individual"/>
+        <tabCount Value="3"/>
+        <comment Value="a &quot;quoted&quot; note"/>
+        <priority Value="0"/>
+        <SubLayer>
+            <index Value="2"/>
+            <speed Value="1"/>
+        </SubLayer>
+    </CutSetting>
+    <CutSetting type="Scan">
+        <index Value="7"/>
+        <name Value="C07"/>
+        <maxPower Value="33"/>
+        <speed Value="150"/>
+        <priority Value="1"/>
+    </CutSetting>
+</LightBurnProject>

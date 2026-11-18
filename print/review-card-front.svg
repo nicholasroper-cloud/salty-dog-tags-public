@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3.75in" height="2.25in" viewBox="0 0 375 225"><style>@import url("https://fonts.googleapis.com/css2?family=Bungee&amp;family=Archivo:wght@400;700;900&amp;family=DM+Mono:wght@500&amp;display=block");.d{font-family:Bungee,Impact,sans-serif}.b{font-family:Archivo,Helvetica,sans-serif}.m{font-family:"DM Mono",monospace}</style><rect width="375" height="225" fill="#1E0E3A"/>
+<rect x="12.5" y="205.5" width="350" height="7" fill="#E6007E"/>
+<g transform="translate(268 38) scale(.42)">
+  <path d="M46 46 C32 36 14 42 6 62 C16 64 26 66 32 76 C32 62 36 52 46 46 Z" fill="#FFF4FA"/>
+  <path d="M154 46 C168 36 186 42 194 62 C184 64 174 66 168 76 C168 62 164 52 154 46 Z" fill="#FFF4FA"/>
+  <path d="M39 51 C29 46 18 50 13 59 C20 61 26 63 30 67 C31 60 34 55 39 51 Z" fill="#E6007E"/>
+  <path d="M161 51 C171 46 182 50 187 59 C180 61 174 63 170 67 C169 60 166 55 161 51 Z" fill="#E6007E"/>
+  <path d="M100 38 C132 38 156 40 166 52 C176 64 178 84 180 100 C190 116 196 136 190 156 C185 171 168 179 150 181 C140 182 136 184 132 186 C122 191 112 192 100 192 C88 192 78 191 68 186 C64 184 60 182 50 181 C32 179 15 171 10 156 C4 136 10 116 20 100 C22 84 24 64 34 52 C44 40 68 38 100 38 Z" fill="#FFF4FA"/>
+  <path d="M116 86 C118 72 140 66 156 74 C170 82 170 104 158 114 C146 122 124 118 118 106 Z" fill="#E6007E"/>
+  <path d="M84 64 Q100 58 116 64" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M46 84 C60 72 82 72 100 82 C118 72 140 72 154 84" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 108 C72 90 128 90 126 108" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M100 127 V139" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41 162 C44 172 52 178 62 180" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M159 162 C156 172 148 178 138 180" fill="none" stroke="#120624" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 96 L74 100 C74 108 68 113 62 113 C55 113 50 107 50 100 Z" fill="#120624"/>
+  <path d="M150 96 L126 100 C126 108 132 113 138 113 C145 113 150 107 150 100 Z" fill="#120624"/>
+  <path d="M78 112 C78 102 122 102 122 112 C122 121 112 128 100 128 C88 128 78 121 78 112 Z" fill="#120624"/>
+  <path d="M40 162 C54 134 84 132 100 139 C116 132 146 134 160 162 C142 153 120 151 100 151 C80 151 58 153 40 162 Z" fill="#120624"/>
+  <path d="M61 156 C62 148 64 140 67 135 C71 140 74 147 76 154 Z" fill="#FFF4FA" stroke="#120624" stroke-width="3" stroke-linejoin="round" paint-order="stroke"/>
+  <path d="M139 156 C138 148 136 140 133 135 C129 140 126 147 124 154 Z" fill="#FFF4FA" stroke="#120624" stroke-width="3" stroke-linejoin="round" paint-order="stroke"/>
+  <path d="M84 153 l2 -7 h6 l1 7 Z" fill="#FFF4FA" stroke="#120624" stroke-width="3" stroke-linejoin="round" paint-order="stroke"/>
+  <path d="M95 152 l1 -7 h7 l1 7 Z" fill="#FFF4FA" stroke="#120624" stroke-width="3" stroke-linejoin="round" paint-order="stroke"/>
+  <path d="M107 153 l1 -7 h6 l2 7 Z" fill="#FFF4FA" stroke="#120624" stroke-width="3" stroke-linejoin="round" paint-order="stroke"/>
+  <circle cx="66" cy="104" r="2.6" fill="#FFF4FA"/>
+  <circle cx="134" cy="104" r="2.6" fill="#FFF4FA"/>
+  <ellipse cx="90" cy="108" rx="5" ry="2.4" transform="rotate(-8 90 108)" fill="#FFF4FA"/>
+ </g>
+<text class="d" x="28" y="62" font-size="26" fill="#FFFFFF">THANK YOU.</text>
+<text class="b" x="28" y="84" font-size="11" fill="#D2C8E0">Thanks for letting us write</text>
+<text class="b" x="28" y="98" font-size="11" fill="#D2C8E0">about your dog.</text>
+<rect x="28" y="128" width="226" height="44" rx="8" fill="none" stroke="#FFD166" stroke-width="1.4"/>
+<text class="d" x="38" y="146" font-size="9.5" fill="#FFD166">BULLDOG PROMISE</text>
+<text class="b" x="38" y="162" font-size="9.6" font-weight="700" fill="#FFFFFF">We misengrave it, we remake it free.</text>
+<text class="m" x="28" y="192" font-size="8" fill="#00B5D8">saltydogtags.com</text></svg>

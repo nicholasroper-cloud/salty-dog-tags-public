@@ -1,0 +1,23 @@
+{
+  "_readme": "Per-finish QR gate. on = the builder offers the QR toggle and the laser may engrave it. test = test-gated, stays OFF until a test tag decodes first try on 3 phones (a current iPhone, an iPhone 4+ years old, a mid-range Android) at 10-30 cm, indoors and in daylight. off = never. Flip a value after the laser test matrix, commit, deploy. Unknown keys are ignored. The laser also needs a TUNED qr-* preset before it will auto-generate (laser/presets).",
+  "finishes": {
+    "stainless": "on",
+    "polished": "on",
+    "black": "on",
+    "royal": "on",
+    "red": "on",
+    "green": "on",
+    "silver": "test",
+    "sky": "test",
+    "yellow": "test",
+    "pink": "test",
+    "hotpink": "test",
+    "ssblack": "test",
+    "navy": "test",
+    "gold": "test",
+    "bronze": "test",
+    "brass": "test",
+    "rainbow": "off",
+    "fullcolor": "off"
+  }
+}

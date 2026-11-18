@@ -1,0 +1,258 @@
+{
+  "_source": "Copy: top-sayings.md. index = 0-based SAYINGS position (site/app.js). Slugs avoid the six theme slugs.",
+  "singles": [
+    {
+      "slug": "built-like-a-loaf",
+      "index": 2,
+      "title": "Built Like a Loaf Dog Tag | Salty Dog Tags",
+      "meta": "\"Built like a loaf.\" on a laser-engraved dog tag. Bread, but make it dog. Name and phone on the back, from $12.",
+      "blurb": "Look at a bulldog from the side. Rectangle. Bread. Somebody sliced the corners off and forgot to bake in a neck. This is the line for the dog who sits in loaf position, paws tucked, and refuses to explain himself. It works on a bulldog, a corgi, a pug or any dog who has ever been mistaken for a cushion. Pairs well with the heart shape, for a loaf with feelings. Your dog's name and number go on the back. Laser engraved, from $12.",
+      "cta": "Engrave it and let the loaf speak for itself."
+    },
+    {
+      "slug": "if-found-bring-snacks",
+      "index": 13,
+      "title": "If Found, Bring Snacks Dog Tag | Salty Dog Tags",
+      "meta": "\"If found, bring snacks.\" on a laser-engraved dog tag. Negotiating position: cheese. Name and phone on the back, from $12.",
+      "blurb": "Not \"please call.\" Not \"reward offered.\" Snacks. Your dog has priorities, and a stranger who finds him is about to meet them. This is the lost-dog tag with a negotiating position. It's friendly, it's a little pushy, and it gives whoever picks him up a clear idea of what the next ten minutes look like. He will accept cheese. Put the number on the back and the snack demand on the front. Laser engraved, from $12.",
+      "cta": "Engrave it and put the snacks on notice."
+    },
+    {
+      "slug": "dont-follow-me-im-lost-too",
+      "index": 15,
+      "title": "Don't Follow Me. I'm Lost Too. Dog Tag | Salty Dog Tags",
+      "meta": "\"Don't follow me. I'm lost too.\" on a laser-engraved dog tag. The leader has no map. Name and phone on the back, from $12.",
+      "blurb": "The honest tag. Most lost dogs act like they know where they're going. This one admits it. If you've ever followed your dog down a trail because he looked so sure, you'll feel this one. It's a public service announcement in metal: the leader has no map, and the dog has no shame. Honest, funny, and a good way to start a conversation with strangers at the trailhead. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Lead by example, badly."
+    },
+    {
+      "slug": "reward-one-kiss",
+      "index": 17,
+      "title": "Reward: One (1) Kiss Dog Tag | Salty Dog Tags",
+      "meta": "\"Reward: one (1) kiss.\" on a laser-engraved dog tag. The bounty is itemized. Name and phone on the back, from $12.",
+      "blurb": "The bounty is a kiss. Singular. Itemized. Your dog has looked at the going rate for a found dog and decided he is worth exactly one (1) kiss, applied to the face of whoever returns him. It's the most bureaucratic way to say \"I'm lovable,\" and it works. People read it, laugh, and remember they were going to be nice anyway. Good for soft-hearted dogs with paperwork energy. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Terms and conditions: one kiss."
+    },
+    {
+      "slug": "certified-menace",
+      "index": 18,
+      "title": "Certified Menace Dog Tag | Salty Dog Tags",
+      "meta": "\"Certified menace.\" on a laser-engraved dog tag. The certificate is fictional. Name and phone on the back, from $12.",
+      "blurb": "Two words, no appeal. This is the tag for the dog who has a file at the neighborhood watch and a fan club at the dog park. The certificate is fictional. The menace is documented. Pair it with a skull icon if you want to lean in, or a heart if you want the irony. Either way, the mailman will know what he's dealing with before he reaches the gate. On the back goes your dog's name and your phone number. Tags start at $12.",
+      "cta": "Engrave it. Official paperwork pending."
+    },
+    {
+      "slug": "i-bite-sandwiches",
+      "index": 20,
+      "title": "I Bite. (Sandwiches.) Dog Tag | Salty Dog Tags",
+      "meta": "\"I bite. (Sandwiches.)\" on a laser-engraved dog tag. The punchline is lunch. Name and phone on the back, from $12.",
+      "blurb": "The setup is scary. The punchline is lunch. Strangers read the first half, take one step back, then notice the parentheses and relax. It's a great tag for the dog who has never bitten a human but has absolutely cleared a picnic table. Short enough to read from a distance, funny enough to win a smile before the nervous laugh. Parentheses engrave beautifully. Works on any dog with a sandwich record. Name and number on the back. Cut into the metal by laser. From $12.",
+      "cta": "Engrave it. Hold the mustard."
+    },
+    {
+      "slug": "exploring-without-consent",
+      "index": 35,
+      "title": "Not Lost. Exploring Without Consent. | Salty Dog Tags",
+      "meta": "\"Not lost. Exploring without consent.\" on a laser-engraved dog tag. Nobody signed the form. Name and phone on the back, from $12.",
+      "blurb": "Your dog was not lost. Your dog was on a field trip. Nobody signed the form, including you. This line turns every gate-opening, fence-hopping, back-door-bolting adventure into a documented outing. It's the one for escape artists who come back looking pleased with themselves. If a stranger finds him, the tag does the explaining, and your number on the back gives them someone to call. Check the gate latch anyway. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. File the paperwork later."
+    },
+    {
+      "slug": "return-for-reward-reward-is-me",
+      "index": 36,
+      "title": "Return for Reward. Reward Is Me. Dog Tag | Salty Dog Tags",
+      "meta": "\"Return for reward. Reward is me.\" on a laser-engraved dog tag. The prize is the dog. Name and phone on the back, from $12.",
+      "blurb": "A tag that offers a bounty and then reveals the bounty is the dog. Genius, circular, slightly smug. The finder gets what they came for before they've finished reading. It's right for the dog who knows exactly how loved he is and has decided that finding him is the prize. Three short lines, bold type, and a punchline that lands last. He accepts payment in belly rubs. Your dog's name and number go on the back. Laser engraved, from $12.",
+      "cta": "Engrave it. Claim your prize."
+    },
+    {
+      "slug": "good-boy-legally-disputed",
+      "index": 39,
+      "title": "Good Boy (Legally Disputed) Dog Tag | Salty Dog Tags",
+      "meta": "\"Good boy (legally disputed).\" on a laser-engraved dog tag. The case is still open. Name and phone on the back, from $12.",
+      "blurb": "The case is still open. Witnesses saw the dog eat a couch cushion, but witnesses also saw him fall asleep on a stranger's foot, and the jury can't agree. This tag lets him wear the verdict he deserves. It suits owners who love a dog with a past. The parentheses make it land softly, like a wink from a defendant. Court costs: one belly rub. Great on a polished stainless bone. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Case closed. Mostly."
+    },
+    {
+      "slug": "flight-risk",
+      "index": 44,
+      "title": "If You Can Read This, I'm a Flight Risk. | Salty Dog Tags",
+      "meta": "\"If you can read this, I'm a flight risk.\" on a laser-engraved dog tag. A warning label with fur. Name and phone on the back, from $12.",
+      "blurb": "A warning label for the dog who treats every open door like a prize. If a stranger can read the tag, the dog is already close to leaving. This one earns its place on escape artists, door dashers, and anyone whose dog has learned what a latch sounds like. Keep a leash handy, since the tag is funny and the sprint is real. Three lines, easy to read. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Read it fast."
+    },
+    {
+      "slug": "will-work-for-belly-rubs",
+      "index": 46,
+      "title": "Will Work for Belly Rubs. Union Rules. | Salty Dog Tags",
+      "meta": "\"Will work for belly rubs. Union rules.\" on a laser-engraved dog tag. The union has one demand. Name and phone on the back, from $12.",
+      "blurb": "Your dog has a union. The union has a single demand. Belly rubs, paid on delivery, no exceptions, and a mandatory break after every one. This is the tag for the hard-working lap dog who clocks in at 6 a.m. and clocks out on his back with all four paws in the air. Employers, meaning you, should comply. Strikes involve a long stare and a nudge at the elbow. Name and number on the back. Cut into the metal by laser. From $12.",
+      "cta": "Engrave it. Sign the contract."
+    },
+    {
+      "slug": "pocket-sized-problem",
+      "index": 49,
+      "title": "Pocket-Sized Problem Dog Tag | Salty Dog Tags",
+      "meta": "\"Pocket-sized problem.\" on a laser-engraved dog tag. Small dog, large file. Name and phone on the back, from $12.",
+      "blurb": "Small dog. Large file. This line is for the little one who has outsized opinions and a body that fits in a tote bag. It reads as affectionate and a little defensive, like an owner who has apologized to many strangers on the dog's behalf. Heart and round tags sit comfortably on a small collar. Short, sweet, and impossible to argue with. Two lines, big laugh. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Keep it in your pocket."
+    },
+    {
+      "slug": "barks-first-thinks-never",
+      "index": 55,
+      "title": "Barks First. Thinks Never. Dog Tag | Salty Dog Tags",
+      "meta": "\"Barks first. Thinks never.\" on a laser-engraved dog tag. A motto for the loud ones. Name and phone on the back, from $12.",
+      "blurb": "Fast, honest, and accurate. There's a dog at every park who sees a leaf, a car, a cloud or a reflection and lets the whole street know about it before the brain has finished loading. This tag gives that dog a personal mission statement. It reads like a motto and lands like an apology to the neighbors. Bold block lettering suits it. So does a very loud collar. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Warn the neighborhood."
+    },
+    {
+      "slug": "ate-homework-was-delicious",
+      "index": 66,
+      "title": "Ate Homework. Was Delicious. Dog Tag | Salty Dog Tags",
+      "meta": "\"Ate homework. Was delicious.\" on a laser-engraved dog tag. Review: excellent. Name and phone on the back, from $12.",
+      "blurb": "The oldest excuse in the book, finally true. Your dog did not hand in the assignment. He ate it. Review: excellent. This is a tag for the kid's dog, the teacher's dog, or any dog with a taste for paper, cardboard, and mail. It gets a laugh at the front door and a nod from every parent in the building. Two short lines, easy to read. On the back goes your dog's name and your phone number. Tags start at $12.",
+      "cta": "Engrave it. Show your work."
+    },
+    {
+      "slug": "call-my-dad-moms-already-crying",
+      "index": 70,
+      "title": "Call My Dad. Mom's Already Crying. Dog Tag | Salty Dog Tags",
+      "meta": "\"Call my dad. Mom's already crying.\" on a laser-engraved dog tag. Dad stays calm. Name and phone on the back, from $12.",
+      "blurb": "Every family has a designated panicker and a designated problem-solver. This tag knows which is which. Mom is already in tears, so the finder is being asked, kindly, to skip her and dial Dad, who will calmly say \"Where?\" and grab his keys. It's a warm joke with a real family in it, and it makes strangers smile before they pick up the phone. Your dog's name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Let Dad handle it."
+    },
+    {
+      "slug": "hears-cheese-from-three-rooms",
+      "index": 190,
+      "title": "Hears Cheese From Three Rooms Dog Tag | Salty Dog Tags",
+      "meta": "\"Hears cheese from three rooms.\" on a laser-engraved dog tag. A superpower with a narrow range. Name and phone on the back, from $12.",
+      "blurb": "A superpower with a very narrow range. Your dog can't hear his name, the doorbell, or a direct request to come inside, but a cheese wrapper opening on the other side of the house brings him through the wall. This tag is for the selective listener with a perfect sense of what matters. It reads like a field report, because it is one. Three lines, one hungry dog. Name and number on the back. Cut into the metal by laser. From $12.",
+      "cta": "Engrave it. Open the cheese."
+    },
+    {
+      "slug": "knocked-it-over-eye-contact",
+      "index": 191,
+      "title": "Knocked It Over. On Purpose. Eye Contact. | Salty Dog Tags",
+      "meta": "\"Knocked it over. On purpose. Eye contact.\" on a laser-engraved dog tag. Eye contact included. Name and phone on the back, from $12.",
+      "blurb": "Cup. Edge of the counter. Slow push, eyes locked on yours. If you've watched your dog do this, you know the tag was written about him. It's three short sentences and a stare, and it says everything a dog would say if he had to file an incident report. Give it to the dog who tests gravity and your patience. Block lettering looks especially smug. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Make eye contact."
+    },
+    {
+      "slug": "i-file-complaints",
+      "index": 200,
+      "title": "I Don't Bark. I File Complaints. Dog Tag | Salty Dog Tags",
+      "meta": "\"I don't bark. I file complaints.\" on a laser-engraved dog tag. Formal objection, at volume. Name and phone on the back, from $12.",
+      "blurb": "Your dog doesn't bark at the delivery truck. He lodges a formal objection, in triplicate, at volume. This is the tag for the dog who has a grievance about the mailman, the vacuum, the squirrel, and the unacceptable timing of dinner. Corporate tone, canine delivery. It suits herding breeds and chatty dogs of every size, and it reads well in a clean slab font. Filed under: loud. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Submit the complaint."
+    },
+    {
+      "slug": "am-now-furniture",
+      "index": 205,
+      "title": "Will Not Walk. Am Now Furniture. Dog Tag | Salty Dog Tags",
+      "meta": "\"Will not walk. Am now furniture.\" on a laser-engraved dog tag. Midwalk protest, now seating. Name and phone on the back, from $12.",
+      "blurb": "Midway through the walk, your dog sat down and became part of the landscape. You've tried treats, encouragement and a dramatic sigh. Nothing. He's furniture now. This tag is for the sit-down protester with a preferred spot on the sidewalk. It's funny at the park, funnier at the end of a long street, and funniest when you're carrying him home. Basset hounds, bulldogs and corgis will relate. Your dog's name and number go on the back. Laser engraved, from $12.",
+      "cta": "Engrave it. Dust optional."
+    },
+    {
+      "slug": "ears-drag-dignity-too",
+      "index": 206,
+      "title": "Ears Drag. Dignity Too. Dog Tag | Salty Dog Tags",
+      "meta": "\"Ears drag. Dignity too.\" on a laser-engraved dog tag. Velvet brooms for sidewalks. Name and phone on the back, from $12.",
+      "blurb": "For the dog whose ears sweep the sidewalk like a pair of velvet brooms. He walks with his nose down and his pride somewhere behind him, catching up. The joke is gentle, a little sad, and entirely affectionate. It works on any long-eared breed, from hounds to spaniels, and especially on the dog who sits in the mud and looks wounded about it. Two lines, a lot of heart. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Dignity sold separately."
+    },
+    {
+      "slug": "walk-ended-i-lay-down",
+      "index": 228,
+      "title": "Walk Ended. I Lay Down. Negotiate. Dog Tag | Salty Dog Tags",
+      "meta": "\"Walk ended. I lay down. Negotiate.\" on a laser-engraved dog tag. Terms: treats, or a carry. Name and phone on the back, from $12.",
+      "blurb": "The walk is over, according to the dog. He has made the decision, lowered himself onto the pavement, and opened negotiations. Terms: treats, a carry, or a very long wait. Bulldogs perfected this move, and pugs and basset hounds have studied it. This three-line tag is the contract for the dog who treats a stroll like a coffee break. Strangers will smile. He will not move. On the back goes your dog's name and your phone number. Tags start at $12.",
+      "cta": "Engrave it. Counteroffer: cheese."
+    },
+    {
+      "slug": "face-like-a-fist",
+      "index": 231,
+      "title": "Face Like a Fist. Heart Like a Pillow. | Salty Dog Tags",
+      "meta": "\"Face like a fist. Heart like a pillow.\" on a laser-engraved dog tag. Tough outside, soft all through. Name and phone on the back, from $12.",
+      "blurb": "Tough on the outside, soft all the way through. Some dogs look like they should be working the door at a nightclub, then roll over for a belly rub from anyone who says hello. This line is a love letter to those dogs. It works on bulldogs, boxers, mastiffs, and every blocky-faced softie who looks like trouble and acts like a couch cushion. Two lines, easy to read. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Softie on the inside."
+    },
+    {
+      "slug": "not-scared-shaking-with-rage",
+      "index": 245,
+      "title": "Not Scared. Shaking With Rage. Dog Tag | Salty Dog Tags",
+      "meta": "\"Not scared. Shaking with rage.\" on a laser-engraved dog tag. It's rage. Definitely rage. Name and phone on the back, from $12.",
+      "blurb": "Small dogs shake. Small dogs also hold grudges. This line settles the debate in the dog's favor: he is not afraid of the vacuum, the thunderstorm, or the Great Dane next door. He is furious. It's the tag for chihuahuas, mini pinschers, and any dog who vibrates at the vet. Say it with confidence. Compact, cute, and a little bit threatening. Heart and round tags suit small dogs. Your dog's name and number go on the back. Laser engraved, from $12.",
+      "cta": "Engrave it. He is not scared."
+    },
+    {
+      "slug": "will-outlive-us-all",
+      "index": 246,
+      "breeds": [
+        "chihuahua",
+        "pug",
+        "yorkie"
+      ],
+      "title": "Will Outlive Us All. Out of Spite. Dog Tag | Salty Dog Tags",
+      "meta": "\"Will outlive us all. Out of spite.\" on a laser-engraved dog tag. Pure attitude. Name and phone on the back, from $12.",
+      "blurb": "Every family has one. The dog who has survived three cats, two moves and a diet, and plans to keep going purely to annoy everyone who doubted him. This is a joke about attitude, nothing more, and it suits the senior dog with a wicked glint. Spite is a great motivator. It reads in one glance, even from across the dog park. Pair it with a skull icon. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Let the spite show."
+    },
+    {
+      "slug": "couldnt-have-gone-far",
+      "index": 250,
+      "title": "Couldn't Have Gone Far. Look at My Legs. | Salty Dog Tags",
+      "meta": "\"Couldn't have gone far. Look at my legs.\" on a laser-engraved dog tag. Search radius: one hedge. Name and phone on the back, from $12.",
+      "blurb": "A lost-dog tag for short-legged dogs, because it comes with its own search radius. Corgis, dachshunds, bassets and bulldogs can all lay claim. The dog escapes the yard. He makes it to the neighbor's hedge. He stops, tired, proud, and still within sight of the front door. The tag explains the whole situation in one line and gives the finder a laugh and a reason to call. On the back goes your dog's name and your phone number. Tags start at $12.",
+      "cta": "Engrave it. Measure the radius."
+    },
+    {
+      "slug": "bred-to-hunt-badgers",
+      "index": 256,
+      "title": "Bred to Hunt Badgers. Now Hunts Blankets. | Salty Dog Tags",
+      "meta": "\"Bred to hunt badgers. Now hunts blankets.\" on a laser-engraved dog tag. Career change: blanket tunneling. Name and phone on the back, from $12.",
+      "blurb": "Dachshunds were built to go down a badger hole and argue. Today they go into a blanket and burrow like they're at work. This is the tag for the long, low, loud dog who has traded a career in burrow pursuit for a career in couch tunneling. It's a little history, a little roast, and a lot of accurate. Anyone with a dog who vanishes under the covers will recognize the type. The name and your phone number go on the back, engraved into the metal. From $12.",
+      "cta": "Engrave it. Badgers not included."
+    },
+    {
+      "slug": "i-dont-shed-i-snow",
+      "index": 292,
+      "title": "I Don't Shed. I Snow. Dog Tag | Salty Dog Tags",
+      "meta": "\"I don't shed. I snow.\" on a laser-engraved dog tag. Peak blizzard in May. Name and phone on the back, from $12.",
+      "blurb": "Sweeping is a lie you tell yourself. Your husky, shepherd or golden doesn't shed in the usual sense of the word. It snows. Gently. Everywhere. On black pants, the couch, the soup. This is the honest label for a dog who produces a second dog's worth of fur every spring and reaches peak blizzard right before company arrives. Utah winters are nothing next to this dog in May. Your dog's name and number go on the back. Laser engraved, from $12.",
+      "cta": "Engrave it. Bring the lint roller."
+    },
+    {
+      "slug": "breed-yes",
+      "index": 302,
+      "breeds": [
+        "doodle"
+      ],
+      "title": "Breed: Yes. Dog Tag | Salty Dog Tags",
+      "meta": "\"Breed: Yes.\" on a laser-engraved dog tag. Zero explanation needed. Name and phone on the back, from $12.",
+      "blurb": "Two words, zero explanation, perfect answer. Every mixed-breed owner has been asked what kind of dog that is, and every one has tilted their head and guessed. Now the dog can answer for himself. It covers the shepherd-lab-terrier-raccoon situation and everything in between. The short line fits any shape without squinting. Perfect for rescues, shelter dogs and every mystery mix with a story nobody can confirm. Name and number on the back. Cut into the metal by laser. From $12.",
+      "cta": "Engrave it. Breed: yours."
+    },
+    {
+      "slug": "guard-dog-will-lick-burglar",
+      "index": 314,
+      "breeds": [
+        "rottweiler",
+        "doberman",
+        "golden-retriever"
+      ],
+      "title": "Guard Dog. Will Lick Burglar. Thoroughly. | Salty Dog Tags",
+      "meta": "\"Guard dog. Will lick burglar. Thoroughly.\" on a laser-engraved dog tag. Welcome party at the door. Name and phone on the back, from $12.",
+      "blurb": "Security has never been so affectionate. This tag introduces your guard dog's actual protocol: spot the intruder, assess the threat, offer a full-face wash. Any dog who barks like a bouncer and greets the delivery driver like a long-lost cousin will relate. Three lines, one warm welcome. Doorbell rings, tail winds up, and the whole house becomes a welcome party. It's a joke about love, not a security system, so keep your locks. We engrave your dog's name and your number on the back. From $12.",
+      "cta": "Engrave it. Wash the burglar."
+    },
+    {
+      "slug": "head-tilt-manipulation-tactic",
+      "index": 328,
+      "title": "Head Tilt Is a Manipulation Tactic Dog Tag | Salty Dog Tags",
+      "meta": "\"Head tilt is a manipulation tactic.\" on a laser-engraved dog tag. Works every time. Name and phone on the back, from $12.",
+      "blurb": "You know the tilt. Ears perk, one eyebrow lifts, the head goes sideways, and suddenly you've agreed to a second dinner. Dogs know exactly what that move does, and this tag says so out loud. It suits the cutest dogs and the most strategic dogs, which are usually the same dog. Great as a gift for anyone who has been played by a Pomeranian. Two lines, zero shame. On the back goes your dog's name and your phone number. Tags start at $12.",
+      "cta": "Engrave it. Tilt responsibly."
+    }
+  ]
+}

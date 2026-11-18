@@ -1,0 +1,247 @@
+{
+  "_source": "St. George / Washington County local set (Recondo, 2026-11-16). Every local fact in tools/content/st-george-*.md and the guide files was checked on the linked official page on the date in 'checked'. Wording rules: before the move the laser is in Lehi (never 'made in', never 'St. George-based', never pickup). The move switch is SHIP_FROM in site/app.js + functions/api/_lib.js: when it starts with 'St. George' the 'after' strings below are used. Run npm run build after flipping it.",
+  "checked": "2026-11-16",
+  "move": {
+    "before": {
+      "BASE_LINE": "We're a bulldog family moving to St. George in early 2027. Until the laser makes the trip, every tag is engraved in Lehi, checked against your order, photographed, and mailed USPS to your St. George or Washington County address.",
+      "ORIGIN": "engraved in Lehi, Utah",
+      "SHIP_LINE": "We engrave and ship within 1 to 2 business days of payment, and USPS takes about 3 to 5 days in transit from Lehi to Washington County.",
+      "FAQ_WHERE": "In Lehi, Utah, for now. We're moving to St. George in early 2027, and until then every tag is engraved in Lehi and mailed USPS. There is no walk-in shop.",
+      "H1": "St. George Dog Tags, Engraved by a Utah Bulldog Family",
+      "TITLE": "St. George Dog Tags: Funny Custom ID Tags | Salty Dog Tags",
+      "DESCRIPTION": "Funny custom dog tags for St. George and Washington County dogs, laser engraved and shipped USPS. Local sayings, license and dog park guides, from $12."
+    },
+    "after": {
+      "BASE_LINE": "We're a bulldog family in St. George. Every tag is engraved here, checked against your order, photographed, and mailed USPS, including to St. George and Washington County addresses.",
+      "ORIGIN": "engraved in St. George, Utah",
+      "SHIP_LINE": "We engrave and ship within 1 to 2 business days of payment, and USPS takes about 3 to 5 days in transit.",
+      "FAQ_WHERE": "In St. George, Utah. Every tag is engraved here and mailed USPS. There is no walk-in shop.",
+      "H1": "St. George Dog Tags From a St. George Bulldog Family",
+      "TITLE": "St. George Dog Tags: Funny Custom ID Tags | Salty Dog Tags",
+      "DESCRIPTION": "Funny custom dog tags laser engraved in St. George, Utah, for Washington County dogs and everywhere else. Local sayings and guides, USPS, from $12."
+    }
+  },
+  "sayings": [
+    {
+      "lines": [
+        "Red rock rated.",
+        "Couch certified."
+      ],
+      "note": "For the dog who hikes Snow Canyon once and naps for a week."
+    },
+    {
+      "lines": [
+        "Snow Canyon dog.",
+        "Has never seen snow."
+      ],
+      "note": "Technically accurate for most of us down here."
+    },
+    {
+      "lines": [
+        "Too hot to fetch.",
+        "Ask again in October."
+      ],
+      "note": "For the July dog with strong opinions about asphalt."
+    },
+    {
+      "lines": [
+        "Hot paws.",
+        "Cool attitude."
+      ],
+      "note": "For the dog who walks at 6 a.m. and judges you for it."
+    },
+    {
+      "lines": [
+        "Lost in the red rocks?",
+        "Call my human."
+      ],
+      "note": "The point of the tag, with a view."
+    },
+    {
+      "lines": [
+        "Leashed for the",
+        "tortoises."
+      ],
+      "note": "For the Red Cliffs hiker who respects the locals."
+    },
+    {
+      "lines": [
+        "Desert dog.",
+        "Pool optional.",
+        "Shade mandatory."
+      ],
+      "note": "For the dog who knows where every shadow is."
+    },
+    {
+      "lines": [
+        "Will hike for",
+        "shade and snacks."
+      ],
+      "note": "For the trail dog with clear priorities."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where are your tags engraved?",
+      "a": "{{FAQ_WHERE}}"
+    },
+    {
+      "q": "How fast does a tag get to St. George?",
+      "a": "We engrave and ship within 1 to 2 business days of payment, then USPS takes 3 to 5 days in transit. Shipping is $4.50 and free on orders of $35 or more. Utah sales tax is added to Utah orders."
+    },
+    {
+      "q": "Is a Salty Dog Tag a St. George dog license?",
+      "a": "No. It's an ID tag with your phone number, not a license or rabies tag. The City of St. George issues the license tag; our guide to St. George and Washington County license rules has the fees and deadlines from the city pages."
+    },
+    {
+      "q": "Do you have a QR tag?",
+      "a": "Yes. For $5 more, a scan-to-find QR goes on the back of tags that support it. Scanning it opens a finder page for your dog, and once you activate it you get an email alert when someone scans it or sends a message. Your phone number stays engraved too, because a QR needs a signal."
+    },
+    {
+      "q": "Can I write my own St. George saying?",
+      "a": "Yes. You get up to three lines on the front, 24 characters each, and the preview shows exactly what fits. The name and number go on the back. If a line runs long, we'll email before we engrave."
+    }
+  ],
+  "guides": [
+    {
+      "slug": "st-george-dog-license-rules",
+      "md": "tools/content/guide-st-george-dog-license-rules.md",
+      "title": "St. George Dog License Rules, Fees & Nearby Cities",
+      "description": "St. George dog license fees, deadlines and the two-dog rule, plus Washington City, Hurricane and Ivins, from the city pages. And how an ID tag differs.",
+      "h1": "St. George Dog License Rules (Plus Washington City, Hurricane and Ivins)",
+      "crumb": "St. George dog license rules",
+      "hubBlurb": "St. George license fees, deadlines and the two-dog rule, plus Washington City, Hurricane and Ivins, all from city pages.",
+      "datePublished": "2026-11-16",
+      "faq": [
+        {
+          "q": "How much is a dog license in St. George, Utah?",
+          "a": "The City of St. George charges $10 per dog if spayed or neutered and $20 if not. Tags go on sale January 1 and expire December 31. Renewals are due by February 28, with a $5 per month late fee per dog after that, up to $20."
+        },
+        {
+          "q": "At what age does a dog need a license in St. George?",
+          "a": "Dogs 4 months or older must be licensed by the city, and a dog you get during the year has to be licensed within 10 days. The online form asks for proof of rabies vaccination."
+        },
+        {
+          "q": "How many dogs can I have in St. George?",
+          "a": "The city's dog licensing page says only two dogs per residence are permitted in St. George. Hurricane allows up to four licensed dogs per residential address. Other cities set their own limits, so check yours."
+        },
+        {
+          "q": "How long does a Washington City dog license last?",
+          "a": "Two years. Washington City requires all dogs in the city to be licensed, with current proof of rabies, and its fee schedule lists $20 for an altered dog and $40 for an unaltered dog for two years."
+        },
+        {
+          "q": "Does a Salty Dog Tag count as my dog license?",
+          "a": "No. Our tags are ID tags, not license or rabies tags, and they don't satisfy any licensing requirement. Your license tag comes from your city."
+        }
+      ]
+    },
+    {
+      "slug": "st-george-dog-parks-and-trails",
+      "md": "tools/content/guide-st-george-dog-parks-and-trails.md",
+      "title": "St. George Dog Parks & Dog-Friendly Trails",
+      "description": "Fenced dog parks in St. George, Washington City and Hurricane, plus the leash rules for Snow Canyon, Red Cliffs and Zion, from the official pages.",
+      "h1": "St. George Dog Parks and Dog-Friendly Trails (With the Leash Rules)",
+      "crumb": "St. George dog parks and trails",
+      "hubBlurb": "Fenced dog parks in St. George, Washington City and Hurricane, and where dogs can hike in Snow Canyon, Red Cliffs and Zion.",
+      "datePublished": "2026-11-16",
+      "faq": [
+        {
+          "q": "Where are the dog parks in St. George?",
+          "a": "The city lists fenced dog parks at Firehouse Park (1929 West 1800 North), J.C. Snow Park (275 East 900 South) and Riverbend Park (810 W. Las Colinas). Washington City has Dog Town Dog Park at 450 South 200 East."
+        },
+        {
+          "q": "Are dogs allowed in Snow Canyon State Park?",
+          "a": "Yes. Utah State Parks says dogs are permitted on all park trails and in the campground, on a leash 6 feet or shorter, under control, on designated mapped trails, with waste bagged and binned."
+        },
+        {
+          "q": "Which trails in Zion allow dogs?",
+          "a": "Only the Pa'rus Trail, which starts at the Zion Canyon Visitor Center. Pets must be on a leash no longer than 6 feet and are not allowed on other trails, in wilderness areas, on shuttle buses or in public buildings."
+        },
+        {
+          "q": "Do dogs have to be leashed in the Red Cliffs Desert Reserve?",
+          "a": "Yes. The reserve's rules say all pets must be on a leash, and officers patrol and may issue citations. The one exception is hunting dogs with a licensed hunter during official hunting seasons."
+        },
+        {
+          "q": "What are the rules inside a St. George dog park?",
+          "a": "The rules brochure the city links from its dog park pages says dogs must be at least 4 months old, fully vaccinated and currently licensed, leashed when entering and leaving, and under voice control. The park closes at 10 p.m."
+        }
+      ]
+    },
+    {
+      "slug": "desert-heat-dog-safety-st-george",
+      "md": "tools/content/guide-desert-heat-dog-safety-st-george.md",
+      "title": "Desert Heat and Dogs in St. George: Pavement, Cars, Trails",
+      "description": "St. George summer heat and your dog: the pavement test, hot cars, trail timing and water, from NPS, NWS and Utah State Parks, plus a lost-dog plan.",
+      "h1": "Desert Heat and Your Dog in St. George: Pavement, Cars, Trails and a Tag That Reads",
+      "crumb": "Desert heat and dogs",
+      "hubBlurb": "Hot pavement, hot cars and summer trail timing in St. George, from park and weather service pages, plus a lost-dog plan.",
+      "datePublished": "2026-11-16",
+      "faq": [
+        {
+          "q": "How hot does it get in St. George in summer?",
+          "a": "Utah State Parks says daytime temperatures at Snow Canyon State Park frequently top 105 degrees Fahrenheit in July and August."
+        },
+        {
+          "q": "How do I know if the pavement is too hot for my dog?",
+          "a": "Zion National Park's B.A.R.K. Ranger page gives a five-second rule: place the back of your hand on the pavement, and if you cannot hold it there for five seconds, it's too hot to walk your pet."
+        },
+        {
+          "q": "Can I leave my dog in the car with the windows cracked?",
+          "a": "The National Weather Service says no: even with the windows cracked, the temperature inside a car can rise almost 20 degrees Fahrenheit in the first 10 minutes, and any pet left inside is at risk."
+        },
+        {
+          "q": "What should a dog tag say for desert hikes?",
+          "a": "Your phone number first, big enough to read at arm's length, with the dog's name. A finder on a hot trail can call you right away, which matters when shelters are closed or by appointment only."
+        },
+        {
+          "q": "Is this veterinary advice?",
+          "a": "No. It's what the park and weather service pages say, linked. If you think your dog is overheating, call your vet."
+        }
+      ]
+    }
+  ],
+  "licenseTable": {
+    "_note": "Summary of the city sections in guide-st-george-dog-license-rules.md. Same sources; keep the two in step.",
+    "head": [
+      "City",
+      "Who needs one",
+      "How long it lasts",
+      "Fee per dog",
+      "Bring"
+    ],
+    "rows": [
+      [
+        "St. George",
+        "st-george",
+        "Dogs 4 months and older; a new dog within 10 days",
+        "January 1 to December 31; renew by February 28",
+        "$10 spayed or neutered, $20 not",
+        "Proof of rabies vaccination"
+      ],
+      [
+        "Washington City",
+        "washington-city",
+        "All dogs; part-time residents after 30 days",
+        "Two years",
+        "$20 altered, $40 not altered",
+        "Current proof of rabies"
+      ],
+      [
+        "Hurricane",
+        "hurricane",
+        "Dogs by 4 months; a new dog within 30 days",
+        "Due January 1",
+        "$10 spayed or neutered, $25 not",
+        "Current rabies certificate"
+      ],
+      [
+        "Ivins",
+        "ivins-and-santa-clara",
+        "Dogs licensed with Ivins City",
+        "Until the rabies certificate expires",
+        "$5 a year altered, $10 unaltered",
+        "Current rabies certificate"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+name = "salty-dog-tags"
+compatibility_date = "2026-08-09"
+pages_build_output_dir = "site"
+
+# Workers AI — powers POST /api/roast and POST /api/portrait. See functions/api/roast.js, portrait.js.
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "ORDERS"
+id = "d9d741408e9f49898078a8f7e78e0efd"
+
+# Smart QR tag (ADR 2026-11-16). Tags, owners, scans live in D1, not KV (KV writes are capped at 1,000 a day and shared with orders).
+# Until you create the database and paste its id here, the site simply has no smart tags: the builder hides the QR toggle and
+# nothing else changes. Steps are in README "Smart QR tag: setup" (wrangler d1 create sdt-tags, then uncomment this block).
+[[d1_databases]]
+binding = "TAGDB"
+database_name = "sdt-tags"
+database_id = "52f33a8d-82e5-41d4-9fa6-308a037405fb"
+migrations_dir = "migrations"
+
+# Non-secret knobs (leave unset to use the defaults in site/tag-qr.js and functions/api/_tagsettings.js):
+#   TAG_BASE_URL         QR payload base, default "HTTPS://SALTYDOGTAGS.COM/T/" (upper case on purpose: one alphanumeric QR segment)
+#   SMART_ENABLED        "false" hides the toggle and stops minting; existing finder pages keep working
+#   SMS_ALERTS_ENABLED   default "true"; "false" stops all owner alert texts (email keeps going)
+#   EMAIL_REPLY_TO       hello@saltydogtags.com once Email Routing exists; unset means alert emails carry no reply-to

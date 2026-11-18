@@ -1,0 +1,16 @@
+{
+  "name": "qr-stainless",
+  "label": "QR code on stainless",
+  "status": "untested",
+  "source": "seed copied from the stainless preset (crosshatch on). Run the QR test matrix, tune in LightBurn, then `node cli.mjs preset import <file.lbrn2> qr-stainless --layer 2`",
+  "updatedAt": "2026-11-16",
+  "cutSetting": {
+    "maxPower": 32,
+    "speed": 150,
+    "interval": 0.008,
+    "frequency": 900000,
+    "QPulseWidth": 6,
+    "numPasses": 2,
+    "crossHatch": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "salty-dog-tags",
+  "private": true,
+  "description": "Static site generators and tests for saltydogtags.com. See tools/README.md.",
+  "scripts": {
+    "build": "node tools/build-breeds.mjs && node tools/build-sayings.mjs && node tools/build-pages.mjs && node tools/build-ornament.mjs && node tools/polish-pages.mjs && node tools/build-merchant-feed.mjs && node tools/build-sitemap.mjs",
+    "test": "node --test 'tools/test/*.test.mjs'",
+    "indexnow": "node tools/indexnow.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

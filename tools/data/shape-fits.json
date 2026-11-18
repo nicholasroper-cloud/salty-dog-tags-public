@@ -1,0 +1,24 @@
+{
+  "_source": "Copy: shape-fits.md (Salty Dog Tags copy deck). One size per shape: bone, heart and paw are Medium (about 1.5 in); military is Large (about 2 in); the round is about 1.2 in; polished stainless bone is 48 mm with a paw cut-out. {breed} is the singular breed name; build-breeds.mjs inserts the right a/an.",
+  "heading": "Which shape fits your {breed}",
+  "variants": {
+    "A": {
+      "label": "tiny breeds",
+      "body": "Tags here come in one size per shape, so the shape you pick is the size you get. Small collars and small necks want small tags. For {a} {breed}, start with the round, about 1.2 inches, or the heart, about 1.5 inches. Both sit flat and stay out of the way of a tiny chin. The bone and paw are also about 1.5 inches if you want the classic look. Skip the military, which is about 2 inches, and the polished bone, the biggest tag we make at 48 mm. They'll look like a dinner plate on {a} {breed}. Every shape gets the same two-sided engraving: saying on the front, name and number on the back. Pick the shape. The size comes with it.",
+      "faqQ": "Which tag shape fits {a} {breed}?",
+      "faqA": "Tags come in one size per shape, so the shape sets the size. For {a} {breed}, start with the round (about 1.2 inches) or the heart (about 1.5 inches). Both sit flat under a small chin. The military (about 2 inches) and the polished stainless bone (48 mm) are too big for a dog this size."
+    },
+    "B": {
+      "label": "medium breeds",
+      "body": "Tags here come in one size per shape, so picking a shape is picking a size. For {a} {breed}, the sweet spot is the bone, heart or paw. All three are Medium, about 1.5 inches, which suits a standard collar and a medium neck without swallowing it. Want it a little bigger? The military runs about 2 inches and gives long sayings room to breathe. Want it smaller? The round is about 1.2 inches. The polished stainless bone is the biggest we make at 48 mm, and it comes with a paw cut-out, which is handy if your {breed} also likes to be noticed. Every shape gets the same engraving: saying on the front, name and number on the back.",
+      "faqQ": "Which tag shape fits {a} {breed}?",
+      "faqA": "Tags come in one size per shape, so picking a shape is picking a size. For {a} {breed}, the bone, heart or paw (all Medium, about 1.5 inches) is the sweet spot. Want it bigger? The military is about 2 inches. Want it smaller? The round is about 1.2 inches."
+    },
+    "C": {
+      "label": "large breeds",
+      "body": "Tags here come in one size per shape, so the shape you pick sets the size. {A} {breed} has a big head and a thick collar, and a small tag disappears against all that. Go with the military, about 2 inches, or the polished stainless bone, the biggest we make at 48 mm, with a paw cut-out. Both are easy to read at a glance and easy to find under the fur. The bone, heart and paw are Medium, about 1.5 inches. They work if you like a quieter tag, or if the collar is slim. Leave the round for the lapdogs. Every shape gets the same engraving: saying on the front, name and number on the back.",
+      "faqQ": "Which tag shape fits {a} {breed}?",
+      "faqA": "Tags come in one size per shape, so the shape sets the size. {A} {breed} has a big head and a thick collar, so go with the military (about 2 inches) or the polished stainless bone (48 mm, with a paw cut-out). The bone, heart and paw (about 1.5 inches) suit a slimmer collar. Leave the round for the lapdogs."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "base_url": "https://saltydogtags.com",
+  "name": "Salty Dog Tags",
+  "summary": "Funny, personalized, laser-engraved dog ID tags from a Lehi, Utah family with seven English bulldogs. A joke or saying goes on the front; the dog's name and owner's phone number go on the back. From $12, engraved in Lehi, Utah and shipped by USPS (1-2 business days, then 3-5 days in transit).",
+  "about": "Customers build a tag on the website: pick a saying from a library of 180+ (or write their own, up to three lines of 24 characters), add the dog's name and a phone number for the back, and choose a shape, size and finish. A free \"roast\" tool writes sayings about a specific dog from its name and an optional photo. Nothing is charged when you send an order: you get a secure Clover invoice by email and pay it there.",
+  "facts": [
+    "Prices by size: 1\" $12, 1.5\" $14, 2\" $16, 2.5\" $18. Sizes available depend on the shape.",
+    "Shapes include bone, heart, round, military, paw and others. Finishes: anodized aluminum in several colors, plus stainless steel, black stainless, polished stainless and brass (+$4, polished +$6).",
+    "Stainless-only add-ons: laser color (+$4 for an icon, +$6 for a full line) and a grayscale photo of the dog (+$14, proof emailed before engraving).",
+    "Three or more tags in one order get 15% off the tag price. Shipping is $4.50, free on orders of $35 or more. Shipping is by USPS to US addresses only; there is no local pickup.",
+    "Engraved and shipped in 1 to 2 business days, then USPS takes 3 to 5 days in transit, from Utah. If a tag is engraved wrong, it is remade free.",
+    "The business is moving from Lehi to St. George, Utah in early 2027. Until then every tag is engraved in Lehi and shipped USPS, including to St. George and Washington County. There is no walk-in shop.",
+    "Contact: hello@saltydogtags.com"
+  ],
+  "actions": [
+    "Build and order a tag: https://saltydogtags.com/#build (saying lines, name and phone for the back, shape, size, finish, quantity; nothing is charged on the site: the order is sent and a Clover invoice arrives by email, so a person must pay that invoice).",
+    "Get funny sayings written about a specific dog (free, no account): https://saltydogtags.com/roast/",
+    "Browse all sayings: https://saltydogtags.com/sayings/index.md",
+    "Find tags and sayings for a breed: https://saltydogtags.com/dog-tags-by-breed/index.md"
+  ],
+  "sections": [
+    {
+      "title": "Shop",
+      "paths": [
+        "/",
+        "/sayings/",
+        "/roast/",
+        "/dog-tags-by-breed/",
+        "/utah-dog-tags/",
+        "/st-george-dog-tags/"
+      ]
+    },
+    {
+      "title": "Guides",
+      "paths": [
+        "/guides/",
+        "/guides/what-to-put-on-a-dog-tag/",
+        "/guides/stainless-vs-aluminum-vs-brass-dog-tags/",
+        "/guides/dog-tag-size-guide-by-breed/",
+        "/guides/do-dog-tags-wear-off/",
+        "/guides/utah-dog-license-and-tag-rules/",
+        "/guides/florida-dog-id-law-tag-requirements/",
+        "/guides/st-george-dog-license-rules/",
+        "/guides/st-george-dog-parks-and-trails/",
+        "/guides/desert-heat-dog-safety-st-george/"
+      ]
+    }
+  ]
+}

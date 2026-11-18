@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Activate your tag | Salty Dog Tags</title>
+<link rel="icon" href="/assets/logo/logo-final-icon.svg?v=50" type="image/svg+xml">
+<link rel="stylesheet" href="/t.css?v=1"></head>
+<body><main class="f m">
+<h1>Activate your tag</h1>
+<p class="f__lead">Your tag has a scan-to-find QR on the back. Enter the code from the packing slip in the box and your email. We send a one-time link: no password.</p>
+<form id="claimForm" class="m__card" novalidate>
+  <label for="cT">Tag id</label><input id="cT" name="t" type="text" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="from the packing slip">
+  <label for="cC">Activation code</label><input id="cC" name="c" type="text" maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX-XXXX">
+  <label for="cE">Your email</label><input id="cE" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+  <p class="m__fine">You must be 18 or older. We use your email only to sign you in and send tag alerts.</p>
+  <button class="m__btn m__btn--solid" type="submit">Send my link</button>
+  <p class="m__msg" id="claimMsg" role="status" aria-live="polite"></p>
+</form>
+<p class="m__fine">Already activated? <a href="/my">Sign in to manage your tags</a>. Your phone number is engraved on the tag too, because a QR needs signal.</p>
+<p class="f__brand">Salty Dog Tags</p></main><script src="/claim.js?v=1" defer></script></body></html>
